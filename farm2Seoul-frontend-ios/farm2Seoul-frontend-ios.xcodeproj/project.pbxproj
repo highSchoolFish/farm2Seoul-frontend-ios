@@ -7,26 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0772430B29EEA80700BC9FB0 /* DetailInfoBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0772430A29EEA80700BC9FB0 /* DetailInfoBoardViewController.swift */; };
 		07B4C65429EE805300E09E24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B4C65329EE805300E09E24 /* AppDelegate.swift */; };
 		07B4C65629EE805300E09E24 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B4C65529EE805300E09E24 /* SceneDelegate.swift */; };
-		07B4C65829EE805300E09E24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B4C65729EE805300E09E24 /* ViewController.swift */; };
+		07B4C65829EE805300E09E24 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B4C65729EE805300E09E24 /* MainTabViewController.swift */; };
 		07B4C65B29EE805300E09E24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07B4C65929EE805300E09E24 /* Main.storyboard */; };
 		07B4C65E29EE805300E09E24 /* farm2Seoul_frontend_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 07B4C65C29EE805300E09E24 /* farm2Seoul_frontend_ios.xcdatamodeld */; };
 		07B4C66029EE805300E09E24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07B4C65F29EE805300E09E24 /* Assets.xcassets */; };
 		07B4C66329EE805300E09E24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07B4C66129EE805300E09E24 /* LaunchScreen.storyboard */; };
+		07B4C66B29EE83D200E09E24 /* DailyAuctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B4C66A29EE83D200E09E24 /* DailyAuctionViewController.swift */; };
+		07B4C66D29EE842E00E09E24 /* InfoBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B4C66C29EE842E00E09E24 /* InfoBoardViewController.swift */; };
+		07B4C66F29EE845B00E09E24 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B4C66E29EE845B00E09E24 /* BookmarkViewController.swift */; };
 		8ED956544212C8D4D97D41D4 /* Pods_farm2Seoul_frontend_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED92C44E9F23F1013A5BC3DB /* Pods_farm2Seoul_frontend_ios.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0772430A29EEA80700BC9FB0 /* DetailInfoBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInfoBoardViewController.swift; sourceTree = "<group>"; };
 		07B4C65029EE805300E09E24 /* farm2Seoul-frontend-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "farm2Seoul-frontend-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07B4C65329EE805300E09E24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07B4C65529EE805300E09E24 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		07B4C65729EE805300E09E24 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		07B4C65729EE805300E09E24 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 		07B4C65A29EE805300E09E24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		07B4C65D29EE805300E09E24 /* farm2Seoul_frontend_ios.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = farm2Seoul_frontend_ios.xcdatamodel; sourceTree = "<group>"; };
 		07B4C65F29EE805300E09E24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07B4C66229EE805300E09E24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07B4C66429EE805300E09E24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07B4C66A29EE83D200E09E24 /* DailyAuctionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyAuctionViewController.swift; sourceTree = "<group>"; };
+		07B4C66C29EE842E00E09E24 /* InfoBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoBoardViewController.swift; sourceTree = "<group>"; };
+		07B4C66E29EE845B00E09E24 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
 		648DF574E715156B7018A87A /* Pods-farm2Seoul-frontend-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-farm2Seoul-frontend-ios.debug.xcconfig"; path = "Target Support Files/Pods-farm2Seoul-frontend-ios/Pods-farm2Seoul-frontend-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		ED92C44E9F23F1013A5BC3DB /* Pods_farm2Seoul_frontend_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_farm2Seoul_frontend_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDBE4ED4CE51AB2151E586A5 /* Pods-farm2Seoul-frontend-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-farm2Seoul-frontend-ios.release.xcconfig"; path = "Target Support Files/Pods-farm2Seoul-frontend-ios/Pods-farm2Seoul-frontend-ios.release.xcconfig"; sourceTree = "<group>"; };
@@ -67,12 +75,16 @@
 			children = (
 				07B4C65329EE805300E09E24 /* AppDelegate.swift */,
 				07B4C65529EE805300E09E24 /* SceneDelegate.swift */,
-				07B4C65729EE805300E09E24 /* ViewController.swift */,
+				07B4C65729EE805300E09E24 /* MainTabViewController.swift */,
 				07B4C65929EE805300E09E24 /* Main.storyboard */,
 				07B4C65F29EE805300E09E24 /* Assets.xcassets */,
 				07B4C66129EE805300E09E24 /* LaunchScreen.storyboard */,
 				07B4C66429EE805300E09E24 /* Info.plist */,
 				07B4C65C29EE805300E09E24 /* farm2Seoul_frontend_ios.xcdatamodeld */,
+				07B4C66A29EE83D200E09E24 /* DailyAuctionViewController.swift */,
+				07B4C66C29EE842E00E09E24 /* InfoBoardViewController.swift */,
+				07B4C66E29EE845B00E09E24 /* BookmarkViewController.swift */,
+				0772430A29EEA80700BC9FB0 /* DetailInfoBoardViewController.swift */,
 			);
 			path = "farm2Seoul-frontend-ios";
 			sourceTree = "<group>";
@@ -83,7 +95,6 @@
 				648DF574E715156B7018A87A /* Pods-farm2Seoul-frontend-ios.debug.xcconfig */,
 				FDBE4ED4CE51AB2151E586A5 /* Pods-farm2Seoul-frontend-ios.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -210,7 +221,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07B4C65829EE805300E09E24 /* ViewController.swift in Sources */,
+				07B4C65829EE805300E09E24 /* MainTabViewController.swift in Sources */,
+				07B4C66D29EE842E00E09E24 /* InfoBoardViewController.swift in Sources */,
+				07B4C66B29EE83D200E09E24 /* DailyAuctionViewController.swift in Sources */,
+				07B4C66F29EE845B00E09E24 /* BookmarkViewController.swift in Sources */,
+				0772430B29EEA80700BC9FB0 /* DetailInfoBoardViewController.swift in Sources */,
 				07B4C65E29EE805300E09E24 /* farm2Seoul_frontend_ios.xcdatamodeld in Sources */,
 				07B4C65429EE805300E09E24 /* AppDelegate.swift in Sources */,
 				07B4C65629EE805300E09E24 /* SceneDelegate.swift in Sources */,
