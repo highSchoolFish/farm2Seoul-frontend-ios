@@ -18,10 +18,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQ7-v9-Z2y">
-                                <rect key="frame" x="108.66666666666669" y="340" width="176" height="172"/>
-                                <string key="text">서울시 
-농수산물 
-경매시세</string>
+                                <rect key="frame" x="126.00000000000001" y="368.66666666666669" width="141.33333333333337" height="114.66666666666669"/>
+                                <string key="text">Farm2
+Seoul</string>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -50,7 +49,7 @@
     <resources>
         <image name="LaunchScreen" width="120" height="266.66665649414062"/>
         <namedColor name="MainColor">
-            <color red="0.17254901960784313" green="0.31372549019607843" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.17299999296665192" green="0.31400001049041748" blue="0.2669999897480011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

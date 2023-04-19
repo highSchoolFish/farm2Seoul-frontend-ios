@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailInfoBoardViewController: UIViewController {
+class DetailInfoViewController: UIViewController {
     @IBOutlet weak var navTitle: UINavigationItem!
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var rankImage: UIImageView!
@@ -22,5 +22,7 @@ class DetailInfoBoardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
     }
 }

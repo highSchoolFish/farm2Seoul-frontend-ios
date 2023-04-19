@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0772430B29EEA80700BC9FB0 /* DetailInfoBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0772430A29EEA80700BC9FB0 /* DetailInfoBoardViewController.swift */; };
+		0772430B29EEA80700BC9FB0 /* DetailInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0772430A29EEA80700BC9FB0 /* DetailInfoViewController.swift */; };
 		07B4C65429EE805300E09E24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B4C65329EE805300E09E24 /* AppDelegate.swift */; };
 		07B4C65629EE805300E09E24 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B4C65529EE805300E09E24 /* SceneDelegate.swift */; };
 		07B4C65829EE805300E09E24 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B4C65729EE805300E09E24 /* MainTabViewController.swift */; };
@@ -18,11 +18,15 @@
 		07B4C66B29EE83D200E09E24 /* DailyAuctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B4C66A29EE83D200E09E24 /* DailyAuctionViewController.swift */; };
 		07B4C66D29EE842E00E09E24 /* InfoBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B4C66C29EE842E00E09E24 /* InfoBoardViewController.swift */; };
 		07B4C66F29EE845B00E09E24 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B4C66E29EE845B00E09E24 /* BookmarkViewController.swift */; };
+		07F4E85029EFBFD700A70F2B /* DailyAuctionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4E84F29EFBFD700A70F2B /* DailyAuctionModel.swift */; };
+		07F4E85329EFC22400A70F2B /* DailyAuctionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4E85129EFC22400A70F2B /* DailyAuctionCollectionViewCell.swift */; };
+		07F4E85429EFC22400A70F2B /* DailyAuctionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07F4E85229EFC22400A70F2B /* DailyAuctionCollectionViewCell.xib */; };
+		07F4E85629EFF8FD00A70F2B /* TODOLIST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4E85529EFF8FD00A70F2B /* TODOLIST.swift */; };
 		8ED956544212C8D4D97D41D4 /* Pods_farm2Seoul_frontend_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED92C44E9F23F1013A5BC3DB /* Pods_farm2Seoul_frontend_ios.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0772430A29EEA80700BC9FB0 /* DetailInfoBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInfoBoardViewController.swift; sourceTree = "<group>"; };
+		0772430A29EEA80700BC9FB0 /* DetailInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInfoViewController.swift; sourceTree = "<group>"; };
 		07B4C65029EE805300E09E24 /* farm2Seoul-frontend-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "farm2Seoul-frontend-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07B4C65329EE805300E09E24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07B4C65529EE805300E09E24 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,6 +39,10 @@
 		07B4C66A29EE83D200E09E24 /* DailyAuctionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyAuctionViewController.swift; sourceTree = "<group>"; };
 		07B4C66C29EE842E00E09E24 /* InfoBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoBoardViewController.swift; sourceTree = "<group>"; };
 		07B4C66E29EE845B00E09E24 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
+		07F4E84F29EFBFD700A70F2B /* DailyAuctionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyAuctionModel.swift; sourceTree = "<group>"; };
+		07F4E85129EFC22400A70F2B /* DailyAuctionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyAuctionCollectionViewCell.swift; sourceTree = "<group>"; };
+		07F4E85229EFC22400A70F2B /* DailyAuctionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyAuctionCollectionViewCell.xib; sourceTree = "<group>"; };
+		07F4E85529EFF8FD00A70F2B /* TODOLIST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOLIST.swift; sourceTree = "<group>"; };
 		648DF574E715156B7018A87A /* Pods-farm2Seoul-frontend-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-farm2Seoul-frontend-ios.debug.xcconfig"; path = "Target Support Files/Pods-farm2Seoul-frontend-ios/Pods-farm2Seoul-frontend-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		ED92C44E9F23F1013A5BC3DB /* Pods_farm2Seoul_frontend_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_farm2Seoul_frontend_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDBE4ED4CE51AB2151E586A5 /* Pods-farm2Seoul-frontend-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-farm2Seoul-frontend-ios.release.xcconfig"; path = "Target Support Files/Pods-farm2Seoul-frontend-ios/Pods-farm2Seoul-frontend-ios.release.xcconfig"; sourceTree = "<group>"; };
@@ -84,7 +92,11 @@
 				07B4C66A29EE83D200E09E24 /* DailyAuctionViewController.swift */,
 				07B4C66C29EE842E00E09E24 /* InfoBoardViewController.swift */,
 				07B4C66E29EE845B00E09E24 /* BookmarkViewController.swift */,
-				0772430A29EEA80700BC9FB0 /* DetailInfoBoardViewController.swift */,
+				0772430A29EEA80700BC9FB0 /* DetailInfoViewController.swift */,
+				07F4E84F29EFBFD700A70F2B /* DailyAuctionModel.swift */,
+				07F4E85129EFC22400A70F2B /* DailyAuctionCollectionViewCell.swift */,
+				07F4E85229EFC22400A70F2B /* DailyAuctionCollectionViewCell.xib */,
+				07F4E85529EFF8FD00A70F2B /* TODOLIST.swift */,
 			);
 			path = "farm2Seoul-frontend-ios";
 			sourceTree = "<group>";
@@ -166,6 +178,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07F4E85429EFC22400A70F2B /* DailyAuctionCollectionViewCell.xib in Resources */,
 				07B4C66329EE805300E09E24 /* LaunchScreen.storyboard in Resources */,
 				07B4C66029EE805300E09E24 /* Assets.xcassets in Resources */,
 				07B4C65B29EE805300E09E24 /* Main.storyboard in Resources */,
@@ -223,11 +236,14 @@
 			files = (
 				07B4C65829EE805300E09E24 /* MainTabViewController.swift in Sources */,
 				07B4C66D29EE842E00E09E24 /* InfoBoardViewController.swift in Sources */,
+				07F4E85329EFC22400A70F2B /* DailyAuctionCollectionViewCell.swift in Sources */,
+				07F4E85029EFBFD700A70F2B /* DailyAuctionModel.swift in Sources */,
 				07B4C66B29EE83D200E09E24 /* DailyAuctionViewController.swift in Sources */,
 				07B4C66F29EE845B00E09E24 /* BookmarkViewController.swift in Sources */,
-				0772430B29EEA80700BC9FB0 /* DetailInfoBoardViewController.swift in Sources */,
+				0772430B29EEA80700BC9FB0 /* DetailInfoViewController.swift in Sources */,
 				07B4C65E29EE805300E09E24 /* farm2Seoul_frontend_ios.xcdatamodeld in Sources */,
 				07B4C65429EE805300E09E24 /* AppDelegate.swift in Sources */,
+				07F4E85629EFF8FD00A70F2B /* TODOLIST.swift in Sources */,
 				07B4C65629EE805300E09E24 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
