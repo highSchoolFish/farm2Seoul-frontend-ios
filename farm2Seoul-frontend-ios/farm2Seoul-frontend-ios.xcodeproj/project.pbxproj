@@ -18,7 +18,7 @@
 		07B4C66B29EE83D200E09E24 /* DailyAuctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B4C66A29EE83D200E09E24 /* DailyAuctionViewController.swift */; };
 		07B4C66D29EE842E00E09E24 /* InfoBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B4C66C29EE842E00E09E24 /* InfoBoardViewController.swift */; };
 		07B4C66F29EE845B00E09E24 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B4C66E29EE845B00E09E24 /* BookmarkViewController.swift */; };
-		07F4E85029EFBFD700A70F2B /* DailyAuctionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4E84F29EFBFD700A70F2B /* DailyAuctionModel.swift */; };
+		07F4E85029EFBFD700A70F2B /* DailyAuctionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4E84F29EFBFD700A70F2B /* DailyAuctionResponse.swift */; };
 		07F4E85329EFC22400A70F2B /* DailyAuctionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4E85129EFC22400A70F2B /* DailyAuctionCollectionViewCell.swift */; };
 		07F4E85429EFC22400A70F2B /* DailyAuctionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07F4E85229EFC22400A70F2B /* DailyAuctionCollectionViewCell.xib */; };
 		07F4E85629EFF8FD00A70F2B /* TODOLIST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4E85529EFF8FD00A70F2B /* TODOLIST.swift */; };
@@ -39,7 +39,7 @@
 		07B4C66A29EE83D200E09E24 /* DailyAuctionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyAuctionViewController.swift; sourceTree = "<group>"; };
 		07B4C66C29EE842E00E09E24 /* InfoBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoBoardViewController.swift; sourceTree = "<group>"; };
 		07B4C66E29EE845B00E09E24 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
-		07F4E84F29EFBFD700A70F2B /* DailyAuctionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyAuctionModel.swift; sourceTree = "<group>"; };
+		07F4E84F29EFBFD700A70F2B /* DailyAuctionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyAuctionResponse.swift; sourceTree = "<group>"; };
 		07F4E85129EFC22400A70F2B /* DailyAuctionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyAuctionCollectionViewCell.swift; sourceTree = "<group>"; };
 		07F4E85229EFC22400A70F2B /* DailyAuctionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyAuctionCollectionViewCell.xib; sourceTree = "<group>"; };
 		07F4E85529EFF8FD00A70F2B /* TODOLIST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOLIST.swift; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 				07B4C66C29EE842E00E09E24 /* InfoBoardViewController.swift */,
 				07B4C66E29EE845B00E09E24 /* BookmarkViewController.swift */,
 				0772430A29EEA80700BC9FB0 /* DetailInfoViewController.swift */,
-				07F4E84F29EFBFD700A70F2B /* DailyAuctionModel.swift */,
+				07F4E84F29EFBFD700A70F2B /* DailyAuctionResponse.swift */,
 				07F4E85129EFC22400A70F2B /* DailyAuctionCollectionViewCell.swift */,
 				07F4E85229EFC22400A70F2B /* DailyAuctionCollectionViewCell.xib */,
 				07F4E85529EFF8FD00A70F2B /* TODOLIST.swift */,
@@ -237,7 +237,7 @@
 				07B4C65829EE805300E09E24 /* MainTabViewController.swift in Sources */,
 				07B4C66D29EE842E00E09E24 /* InfoBoardViewController.swift in Sources */,
 				07F4E85329EFC22400A70F2B /* DailyAuctionCollectionViewCell.swift in Sources */,
-				07F4E85029EFBFD700A70F2B /* DailyAuctionModel.swift in Sources */,
+				07F4E85029EFBFD700A70F2B /* DailyAuctionResponse.swift in Sources */,
 				07B4C66B29EE83D200E09E24 /* DailyAuctionViewController.swift in Sources */,
 				07B4C66F29EE845B00E09E24 /* BookmarkViewController.swift in Sources */,
 				0772430B29EEA80700BC9FB0 /* DetailInfoViewController.swift in Sources */,

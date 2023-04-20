@@ -20,7 +20,7 @@ class DailyAuctionCollectionViewCell: UICollectionViewCell {
         
     }
     
-    func generateCell(dailyAuction:DailyAuctionModel) {
+    func generateCell(dailyAuction:DailyAuctionResponse) {
         contentView.layer.cornerRadius = 5
         contentView.clipsToBounds = true
         
@@ -28,6 +28,7 @@ class DailyAuctionCollectionViewCell: UICollectionViewCell {
         layer.shadowOpacity = 0.3
         layer.shadowRadius = 2
         layer.masksToBounds = false
+        
         weightLable.text = String(dailyAuction.weight)
         nameLabel.text = dailyAuction.name
         priceLabel.text = String(dailyAuction.price) + "원"
