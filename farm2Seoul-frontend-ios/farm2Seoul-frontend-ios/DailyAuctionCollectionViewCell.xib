@@ -92,7 +92,7 @@
                 <outlet property="nameLabel" destination="7Rx-yh-Xw1" id="5va-Zh-NtS"/>
                 <outlet property="priceLabel" destination="y7k-tX-R3I" id="Kw5-ie-0NI"/>
                 <outlet property="rankImage" destination="Ot4-Xc-TB1" id="cwf-47-bxd"/>
-                <outlet property="weightLable" destination="hJI-6k-cxM" id="VG3-dD-U3L"/>
+                <outlet property="weightLabel" destination="hJI-6k-cxM" id="Vqg-dP-zh3"/>
             </connections>
             <point key="canvasLocation" x="132.82442748091603" y="24.647887323943664"/>
         </collectionViewCell>

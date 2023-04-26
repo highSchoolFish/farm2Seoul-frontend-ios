@@ -1,24 +1,27 @@
 //
-//  BookmarkViewController.swift
+//  WebKitViewController.swift
 //  farm2Seoul-frontend-ios
 //
-//  Created by 강보현 on 2023/04/18.
+//  Created by 강보현 on 2023/04/25.
 //
 
 import UIKit
+import WebKit
+class WebKitViewController: UIViewController {
 
-class BookmarkViewController: UIViewController {
+    @IBOutlet weak var webView: WKWebView!
+    
+    var urlString : String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let url = URL(string: urlString ?? "")
+        let request = URLRequest(url: url!)
+        webView.load(request)
+        
+    }
+    
 
-        // Do any additional setup after loading the view.
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
-        self.view.endEditing(true)
-    }
-    
     /*
     // MARK: - Navigation
 

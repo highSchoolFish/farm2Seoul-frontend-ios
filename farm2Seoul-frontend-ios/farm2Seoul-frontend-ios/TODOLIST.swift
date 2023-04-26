@@ -10,12 +10,6 @@
 // todo list
 
 // DailyAuctionVC
-// DailyAuctionModel생성
-// DailyAuction collectionview 데이터 추가
-// DailyAuction price , 추가
-// MainTabVC에서 입력받은 SearchTextField 값 받아와 서버 통신
-// Cell 터치 시 DetailInfoBoardVC present
-// procotol 만들어?
 
 
 // DetailInfoVC

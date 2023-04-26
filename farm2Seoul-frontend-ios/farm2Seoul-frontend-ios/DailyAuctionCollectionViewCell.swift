@@ -10,7 +10,7 @@ import UIKit
 class DailyAuctionCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var rankImage: UIImageView!
-    @IBOutlet weak var weightLable: UILabel!
+    @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var cellView: UIView!
@@ -29,9 +29,9 @@ class DailyAuctionCollectionViewCell: UICollectionViewCell {
         layer.shadowRadius = 2
         layer.masksToBounds = false
         
-        weightLable.text = String(dailyAuction.weight)
+        weightLabel.text = String(dailyAuction.weight)
         nameLabel.text = dailyAuction.name
-        priceLabel.text = String(dailyAuction.price) + "원"
+        priceLabel.text = String(dailyAuction.avrPrice) + "원"
         
         switch dailyAuction.rank {
         case "특":

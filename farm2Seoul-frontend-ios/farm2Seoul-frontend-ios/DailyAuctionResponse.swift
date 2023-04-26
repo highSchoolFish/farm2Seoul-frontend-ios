@@ -11,16 +11,20 @@ import SwiftyJSON
 
 class DailyAuctionResponse {
     var name: String = ""
-    var price: Int = 0
+    var avrPrice: Int = 0
+    var maxPrice: Int = 0
+    var minPrice: Int = 0
     var weight: String = ""
     var rank: String = ""
     
     init(auctionDictionary :Dictionary<String,Any>) {
         let data = JSON(auctionDictionary)
         name = data["PUMNAME"].stringValue
-        price = data["AVGPRICE"].intValue
+        avrPrice = data["AVGPRICE"].intValue
         weight = data["UNITQTY"].stringValue + data["UNITNAME"].stringValue
         rank = data["GRADENAME"].stringValue
+        minPrice = data["MINPRICE"].intValue
+        maxPrice = data["MAXPRICE"].intValue
     }
     
 }

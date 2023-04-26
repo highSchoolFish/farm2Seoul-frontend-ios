@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0770F9B629F7B1180096BCAE /* MarketCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0770F9B429F7B1180096BCAE /* MarketCollectionViewCell.swift */; };
+		0770F9B729F7B1180096BCAE /* MarketCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0770F9B529F7B1180096BCAE /* MarketCollectionViewCell.xib */; };
+		0770F9B929F7DFA60096BCAE /* WebKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0770F9B829F7DFA60096BCAE /* WebKitViewController.swift */; };
+		0770F9BB29F7EC150096BCAE /* AuctionTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0770F9BA29F7EC150096BCAE /* AuctionTimeViewController.swift */; };
+		0770F9BD29F90EBB0096BCAE /* ThisWeekResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0770F9BC29F90EBB0096BCAE /* ThisWeekResponse.swift */; };
 		0772430B29EEA80700BC9FB0 /* DetailInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0772430A29EEA80700BC9FB0 /* DetailInfoViewController.swift */; };
 		07B4C65429EE805300E09E24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B4C65329EE805300E09E24 /* AppDelegate.swift */; };
 		07B4C65629EE805300E09E24 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B4C65529EE805300E09E24 /* SceneDelegate.swift */; };
@@ -26,6 +31,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0770F9B429F7B1180096BCAE /* MarketCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketCollectionViewCell.swift; sourceTree = "<group>"; };
+		0770F9B529F7B1180096BCAE /* MarketCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarketCollectionViewCell.xib; sourceTree = "<group>"; };
+		0770F9B829F7DFA60096BCAE /* WebKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebKitViewController.swift; sourceTree = "<group>"; };
+		0770F9BA29F7EC150096BCAE /* AuctionTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionTimeViewController.swift; sourceTree = "<group>"; };
+		0770F9BC29F90EBB0096BCAE /* ThisWeekResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThisWeekResponse.swift; sourceTree = "<group>"; };
 		0772430A29EEA80700BC9FB0 /* DetailInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInfoViewController.swift; sourceTree = "<group>"; };
 		07B4C65029EE805300E09E24 /* farm2Seoul-frontend-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "farm2Seoul-frontend-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07B4C65329EE805300E09E24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,11 +102,16 @@
 				07B4C66A29EE83D200E09E24 /* DailyAuctionViewController.swift */,
 				07B4C66C29EE842E00E09E24 /* InfoBoardViewController.swift */,
 				07B4C66E29EE845B00E09E24 /* BookmarkViewController.swift */,
+				0770F9B829F7DFA60096BCAE /* WebKitViewController.swift */,
 				0772430A29EEA80700BC9FB0 /* DetailInfoViewController.swift */,
 				07F4E84F29EFBFD700A70F2B /* DailyAuctionResponse.swift */,
 				07F4E85129EFC22400A70F2B /* DailyAuctionCollectionViewCell.swift */,
 				07F4E85229EFC22400A70F2B /* DailyAuctionCollectionViewCell.xib */,
 				07F4E85529EFF8FD00A70F2B /* TODOLIST.swift */,
+				0770F9B429F7B1180096BCAE /* MarketCollectionViewCell.swift */,
+				0770F9B529F7B1180096BCAE /* MarketCollectionViewCell.xib */,
+				0770F9BA29F7EC150096BCAE /* AuctionTimeViewController.swift */,
+				0770F9BC29F90EBB0096BCAE /* ThisWeekResponse.swift */,
 			);
 			path = "farm2Seoul-frontend-ios";
 			sourceTree = "<group>";
@@ -181,6 +196,7 @@
 				07F4E85429EFC22400A70F2B /* DailyAuctionCollectionViewCell.xib in Resources */,
 				07B4C66329EE805300E09E24 /* LaunchScreen.storyboard in Resources */,
 				07B4C66029EE805300E09E24 /* Assets.xcassets in Resources */,
+				0770F9B729F7B1180096BCAE /* MarketCollectionViewCell.xib in Resources */,
 				07B4C65B29EE805300E09E24 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,6 +250,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0770F9BB29F7EC150096BCAE /* AuctionTimeViewController.swift in Sources */,
+				0770F9BD29F90EBB0096BCAE /* ThisWeekResponse.swift in Sources */,
 				07B4C65829EE805300E09E24 /* MainTabViewController.swift in Sources */,
 				07B4C66D29EE842E00E09E24 /* InfoBoardViewController.swift in Sources */,
 				07F4E85329EFC22400A70F2B /* DailyAuctionCollectionViewCell.swift in Sources */,
@@ -243,7 +261,9 @@
 				0772430B29EEA80700BC9FB0 /* DetailInfoViewController.swift in Sources */,
 				07B4C65E29EE805300E09E24 /* farm2Seoul_frontend_ios.xcdatamodeld in Sources */,
 				07B4C65429EE805300E09E24 /* AppDelegate.swift in Sources */,
+				0770F9B929F7DFA60096BCAE /* WebKitViewController.swift in Sources */,
 				07F4E85629EFF8FD00A70F2B /* TODOLIST.swift in Sources */,
+				0770F9B629F7B1180096BCAE /* MarketCollectionViewCell.swift in Sources */,
 				07B4C65629EE805300E09E24 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,9 +428,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "bhyn.farm2Seoul-frontend-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -438,9 +461,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "bhyn.farm2Seoul-frontend-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

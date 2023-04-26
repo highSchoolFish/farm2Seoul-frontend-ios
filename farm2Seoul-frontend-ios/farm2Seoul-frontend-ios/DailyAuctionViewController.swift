@@ -8,61 +8,78 @@
 import UIKit
 import Moya
 import Alamofire
+import Tabman
 
-class DailyAuctionViewController: UIViewController, UIScrollViewDelegate {
+class DailyAuctionViewController: UIViewController, UIScrollViewDelegate{
     
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var dailyAuctionCollectionView: UICollectionView!
-    
+    @IBOutlet var dailyAuctionCollectionView: UICollectionView!
+    var searchData:[DailyAuctionResponse] = []
     var dailyAuctionData:[DailyAuctionResponse] = []
-    let mainVC = MainTabViewController()
     let interval = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
     var fetchingMore: Bool = false
     var page: Int = 1
+    var startIndex: Int = 1
+    var endIndex: Int = 20
     var listTotalCount: Int = 0
+    var isSearchView: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dailyAuctionCollectionView.register(UINib(nibName: "DailyAuctionCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "DailyAuctionCell")
-        dailyAuctionCollectionView.dataSource = self
-        dailyAuctionCollectionView.delegate = self
-        dailyAuctionCollectionView.isPrefetchingEnabled = true
-        // total count 가져오기
+        print("viewDidload")
+        
+        self.dailyAuctionCollectionView.register(UINib(nibName: "DailyAuctionCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "DailyAuctionCell")
+        self.dailyAuctionCollectionView.dataSource = self
+        self.dailyAuctionCollectionView.delegate = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        print("DailyAuctionVC viewDidAppear")
+        
         self.getDailyAuctionTotalCount()
-        // 첫 10개 보여주기
-        self.getDailyAuction(page: self.page)
+        self.getDailyAuction(page: self.page, startIndex: self.startIndex, endIndex: self.endIndex)
         // 이후 스크롤 할때 바닥에 닿으면 page+1
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        beginBatchFetch()
-        if dailyAuctionCollectionView.contentOffset.y > (dailyAuctionCollectionView.contentSize.height - dailyAuctionCollectionView.bounds.size.height) {
-            print("끝에 도달")
-            if !fetchingMore {
-                beginBatchFetch()
+        if isSearchView {
+            return
+        }
+        else {
+            if scrollView.contentOffset.y + 300 > (dailyAuctionCollectionView.contentSize.height - dailyAuctionCollectionView.bounds.size.height) {
+                print("끝에 도달")
+                if !fetchingMore {
+                    beginBatchFetch()
+                    self.dailyAuctionCollectionView.reloadData()
+                }
             }
         }
     }
+    
     
     private func beginBatchFetch() {
         fetchingMore = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.7, execute: {
             self.page += 1
+            // 2, 11-20
+            self.startIndex = self.endIndex + 1
+            self.endIndex = self.page * 20
+            self.getDailyAuction(page: self.page, startIndex: self.startIndex, endIndex: self.endIndex)
             
-            self.getDailyAuction(page: self.page)
+            //            self.dailyAuctionData = self.dailyAuctionService.getDailyAuction(page: self.page, startIndex: self.startIndex, endIndex: self.endIndex, productName: self.mainTabVC.searchText)
             self.fetchingMore = false
             self.dailyAuctionCollectionView.reloadData()
         })
     }
     
-    private func getDailyAuction(page: Int){
+    private func getDailyAuction(page: Int, startIndex: Int, endIndex: Int){
         let authKey = "766c476c676b6e793132345770716c57"
         let requestType = "json"
         let serviceName = "GarakGradePrice"
-//        self.startIndex = self.endIndex
-//        self.endIndex += page
         let path = "http://openapi.seoul.go.kr:8088/\(authKey)/\(requestType)/\(serviceName)/\(self.startIndex)/\(self.endIndex)"
         
+        print("\(self.startIndex) ~ \(self.endIndex)")
         let url = URL(string: path)!
         let header : HTTPHeaders = ["Content-Type": "application/json"]
         
@@ -74,9 +91,12 @@ class DailyAuctionViewController: UIViewController, UIScrollViewDelegate {
                 print("통신성공")
                 if let dict = value["GarakGradePrice"] as? [String: Any],
                    let dailyAuction = dict["row"] as? [Dictionary<String,AnyObject>] {
-                    dailyAuction.forEach{auctions.append(DailyAuctionResponse(auctionDictionary: $0))}
+                    let filteredAuction = dailyAuction.filter({ ($0["AVGPRICE"] as? Float) != 0.0 })
+                    filteredAuction.forEach{
+                        auctions.append(DailyAuctionResponse(auctionDictionary: $0))
+                    }
                 }
-                self.dailyAuctionData = auctions
+                self.dailyAuctionData.append(contentsOf: auctions)
                 print("dailyAuctionData count \(self.dailyAuctionData.count)")
                 
                 self.dailyAuctionCollectionView.reloadData()
@@ -87,7 +107,6 @@ class DailyAuctionViewController: UIViewController, UIScrollViewDelegate {
                 fatalError()
             }
         }
-        
     }
     
     // 전체 list total count // 1821
@@ -123,15 +142,26 @@ class DailyAuctionViewController: UIViewController, UIScrollViewDelegate {
 
 extension DailyAuctionViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("cell data count \(dailyAuctionData.count)")
-        return dailyAuctionData.count
+                if self.isSearchView {
+            // 검색 cell
+            return searchData.count
+        }
+        else {
+            return dailyAuctionData.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let auctionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "DailyAuctionCell", for: indexPath) as? DailyAuctionCollectionViewCell else {
             return UICollectionViewCell()
         }
-        auctionCell.generateCell(dailyAuction:dailyAuctionData[indexPath.item])
+        if self.isSearchView {
+            // 검색 cell
+            auctionCell.generateCell(dailyAuction:searchData[indexPath.item])
+        }
+        else {
+            auctionCell.generateCell(dailyAuction:dailyAuctionData[indexPath.item])
+        }
         return auctionCell
     }
     
@@ -157,10 +187,14 @@ extension DailyAuctionViewController: UICollectionViewDelegate, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("\(indexPath.section), \(indexPath.row)")
+        
         guard let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailVC") as? DetailInfoViewController else { return }
         // 화면 전환 애니메이션 설정
         detailVC.modalTransitionStyle = .coverVertical
         // 전환된 화면이 보여지는 방법 설정 (fullScreen)
+        var detailData = dailyAuctionData[indexPath.row]
+        detailVC.getDetailData(detailData: detailData)
+        
         detailVC.modalPresentationStyle = .fullScreen
         self.present(detailVC, animated: true, completion: nil)
     }
