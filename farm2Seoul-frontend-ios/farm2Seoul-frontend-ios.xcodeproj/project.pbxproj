@@ -23,6 +23,12 @@
 		07B4C66B29EE83D200E09E24 /* DailyAuctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B4C66A29EE83D200E09E24 /* DailyAuctionViewController.swift */; };
 		07B4C66D29EE842E00E09E24 /* InfoBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B4C66C29EE842E00E09E24 /* InfoBoardViewController.swift */; };
 		07B4C66F29EE845B00E09E24 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B4C66E29EE845B00E09E24 /* BookmarkViewController.swift */; };
+		07BE475229FA57B80074F544 /* LastFourWeeksResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BE475129FA57B80074F544 /* LastFourWeeksResponse.swift */; };
+		07BE475429FA581A0074F544 /* LastThreeMonthsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BE475329FA581A0074F544 /* LastThreeMonthsResponse.swift */; };
+		07BE475729FA5D120074F544 /* BookmarkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BE475529FA5D120074F544 /* BookmarkCollectionViewCell.swift */; };
+		07BE475829FA5D120074F544 /* BookmarkCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07BE475629FA5D120074F544 /* BookmarkCollectionViewCell.xib */; };
+		07BE475D29FA804F0074F544 /* Bookmarks+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BE475C29FA804F0074F544 /* Bookmarks+CoreDataClass.swift */; };
+		07BE475E29FA804F0074F544 /* Bookmarks+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BE475B29FA804F0074F544 /* Bookmarks+CoreDataProperties.swift */; };
 		07F4E85029EFBFD700A70F2B /* DailyAuctionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4E84F29EFBFD700A70F2B /* DailyAuctionResponse.swift */; };
 		07F4E85329EFC22400A70F2B /* DailyAuctionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4E85129EFC22400A70F2B /* DailyAuctionCollectionViewCell.swift */; };
 		07F4E85429EFC22400A70F2B /* DailyAuctionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07F4E85229EFC22400A70F2B /* DailyAuctionCollectionViewCell.xib */; };
@@ -49,6 +55,12 @@
 		07B4C66A29EE83D200E09E24 /* DailyAuctionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyAuctionViewController.swift; sourceTree = "<group>"; };
 		07B4C66C29EE842E00E09E24 /* InfoBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoBoardViewController.swift; sourceTree = "<group>"; };
 		07B4C66E29EE845B00E09E24 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
+		07BE475129FA57B80074F544 /* LastFourWeeksResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastFourWeeksResponse.swift; sourceTree = "<group>"; };
+		07BE475329FA581A0074F544 /* LastThreeMonthsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastThreeMonthsResponse.swift; sourceTree = "<group>"; };
+		07BE475529FA5D120074F544 /* BookmarkCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCollectionViewCell.swift; sourceTree = "<group>"; };
+		07BE475629FA5D120074F544 /* BookmarkCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookmarkCollectionViewCell.xib; sourceTree = "<group>"; };
+		07BE475B29FA804F0074F544 /* Bookmarks+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Bookmarks+CoreDataProperties.swift"; path = "/Users/bhyn/Desktop/farm2Seoul-frontend-ios/farm2Seoul-frontend-ios/farm2Seoul-frontend-ios/Bookmarks+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		07BE475C29FA804F0074F544 /* Bookmarks+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Bookmarks+CoreDataClass.swift"; path = "/Users/bhyn/Desktop/farm2Seoul-frontend-ios/farm2Seoul-frontend-ios/farm2Seoul-frontend-ios/Bookmarks+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		07F4E84F29EFBFD700A70F2B /* DailyAuctionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyAuctionResponse.swift; sourceTree = "<group>"; };
 		07F4E85129EFC22400A70F2B /* DailyAuctionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyAuctionCollectionViewCell.swift; sourceTree = "<group>"; };
 		07F4E85229EFC22400A70F2B /* DailyAuctionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyAuctionCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -91,6 +103,8 @@
 		07B4C65229EE805300E09E24 /* farm2Seoul-frontend-ios */ = {
 			isa = PBXGroup;
 			children = (
+				07BE475C29FA804F0074F544 /* Bookmarks+CoreDataClass.swift */,
+				07BE475B29FA804F0074F544 /* Bookmarks+CoreDataProperties.swift */,
 				07B4C65329EE805300E09E24 /* AppDelegate.swift */,
 				07B4C65529EE805300E09E24 /* SceneDelegate.swift */,
 				07B4C65729EE805300E09E24 /* MainTabViewController.swift */,
@@ -112,6 +126,10 @@
 				0770F9B529F7B1180096BCAE /* MarketCollectionViewCell.xib */,
 				0770F9BA29F7EC150096BCAE /* AuctionTimeViewController.swift */,
 				0770F9BC29F90EBB0096BCAE /* ThisWeekResponse.swift */,
+				07BE475129FA57B80074F544 /* LastFourWeeksResponse.swift */,
+				07BE475329FA581A0074F544 /* LastThreeMonthsResponse.swift */,
+				07BE475529FA5D120074F544 /* BookmarkCollectionViewCell.swift */,
+				07BE475629FA5D120074F544 /* BookmarkCollectionViewCell.xib */,
 			);
 			path = "farm2Seoul-frontend-ios";
 			sourceTree = "<group>";
@@ -193,6 +211,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07BE475829FA5D120074F544 /* BookmarkCollectionViewCell.xib in Resources */,
 				07F4E85429EFC22400A70F2B /* DailyAuctionCollectionViewCell.xib in Resources */,
 				07B4C66329EE805300E09E24 /* LaunchScreen.storyboard in Resources */,
 				07B4C66029EE805300E09E24 /* Assets.xcassets in Resources */,
@@ -254,17 +273,22 @@
 				0770F9BD29F90EBB0096BCAE /* ThisWeekResponse.swift in Sources */,
 				07B4C65829EE805300E09E24 /* MainTabViewController.swift in Sources */,
 				07B4C66D29EE842E00E09E24 /* InfoBoardViewController.swift in Sources */,
+				07BE475229FA57B80074F544 /* LastFourWeeksResponse.swift in Sources */,
 				07F4E85329EFC22400A70F2B /* DailyAuctionCollectionViewCell.swift in Sources */,
 				07F4E85029EFBFD700A70F2B /* DailyAuctionResponse.swift in Sources */,
 				07B4C66B29EE83D200E09E24 /* DailyAuctionViewController.swift in Sources */,
+				07BE475429FA581A0074F544 /* LastThreeMonthsResponse.swift in Sources */,
+				07BE475E29FA804F0074F544 /* Bookmarks+CoreDataProperties.swift in Sources */,
 				07B4C66F29EE845B00E09E24 /* BookmarkViewController.swift in Sources */,
 				0772430B29EEA80700BC9FB0 /* DetailInfoViewController.swift in Sources */,
 				07B4C65E29EE805300E09E24 /* farm2Seoul_frontend_ios.xcdatamodeld in Sources */,
 				07B4C65429EE805300E09E24 /* AppDelegate.swift in Sources */,
 				0770F9B929F7DFA60096BCAE /* WebKitViewController.swift in Sources */,
+				07BE475729FA5D120074F544 /* BookmarkCollectionViewCell.swift in Sources */,
 				07F4E85629EFF8FD00A70F2B /* TODOLIST.swift in Sources */,
 				0770F9B629F7B1180096BCAE /* MarketCollectionViewCell.swift in Sources */,
 				07B4C65629EE805300E09E24 /* SceneDelegate.swift in Sources */,
+				07BE475D29FA804F0074F544 /* Bookmarks+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

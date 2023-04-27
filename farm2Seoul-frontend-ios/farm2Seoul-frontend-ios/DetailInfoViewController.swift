@@ -37,6 +37,8 @@ class DetailInfoViewController: UIViewController {
         super.viewDidLoad()
         makeDetailView()
         makeButton()
+        
+//        getThisWeekGraphData()
     }
     
     func getDetailData(detailData: DailyAuctionResponse) {
@@ -169,16 +171,24 @@ class DetailInfoViewController: UIViewController {
         .validate(statusCode: 200..<300)
         .responseJSON { (response) in
             let result = response.result
-            //            var graphData = []()
+            var thisWeekGraphData = [ThisWeekResponse]()
             switch result {
-            case .success(let value):
+            case .success(let value as [String: Any]):
                 print("통신성공")
                 print(value)
                 
                 // value 디코딩해야함 -> ThisWeekResponse
-//                let thisWeekResponse = try? JSONDecoder().decode(ThisWeekResponse.self, from: value)
+//                let thisWeekResponse = try? JSONDecoder().decode(ThisWeekResponse.self, from: response.data)
 
+                if let data = value as? [Dictionary<String, AnyObject>] {
+                    print(data.count)
+                    data.forEach {
+                        thisWeekGraphData.append(ThisWeekResponse(thisWeekDictionary: $0))
+                    }
+                }
                 
+                print("thisWeek count \(thisWeekGraphData.count)")
+                      
             case .failure(let error):
                 print(error.localizedDescription)
                 
@@ -189,11 +199,89 @@ class DetailInfoViewController: UIViewController {
     }
     
     func getLastFourWeeksGraphData(){
+        let path = "http://high-school-fish.com:8081/api/v1/auctions/unit/average-prices/last-4-weeks?name=\(self.productName)&grade=\(self.rank)&quantity=\(self.quantity)&unit=\(self.unit)"
+
+        print("path: \(path)")
+        guard let encodedStr = path.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
+
+        let url = URL(string: encodedStr)!
+        let header : HTTPHeaders = ["Content-Type": "application/json"]
         
+        AF.request(url,method: .get,
+                   parameters: nil,
+                   encoding: URLEncoding.default,
+                   headers: header)
+        .validate(statusCode: 200..<300)
+        .responseJSON { (response) in
+            let result = response.result
+            var thisWeekGraphData = [ThisWeekResponse]()
+            switch result {
+            case .success(let value as [String: Any]):
+                print("통신성공")
+                print(value)
+                
+                // value 디코딩해야함 -> ThisWeekResponse
+//                let thisWeekResponse = try? JSONDecoder().decode(ThisWeekResponse.self, from: response.data)
+
+                if let data = value as? [Dictionary<String, AnyObject>] {
+                    print(data.count)
+                    data.forEach {
+                        thisWeekGraphData.append(ThisWeekResponse(thisWeekDictionary: $0))
+                    }
+                }
+                
+                print("thisWeek count \(thisWeekGraphData.count)")
+                      
+            case .failure(let error):
+                print(error.localizedDescription)
+                
+            default:
+                fatalError()
+            }
+        }
     }
     
     func getLastThreeMonthsGraphData(){
+        let path = "http://high-school-fish.com:8081/api/v1/auctions/average-prices/last-3-month?name=\(self.productName)&grade=\(self.rank)&quantity=\(self.quantity)&unit=\(self.unit)"
         
+        print("path: \(path)")
+        guard let encodedStr = path.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
+
+        let url = URL(string: encodedStr)!
+        let header : HTTPHeaders = ["Content-Type": "application/json"]
+        
+        AF.request(url,method: .get,
+                   parameters: nil,
+                   encoding: URLEncoding.default,
+                   headers: header)
+        .validate(statusCode: 200..<300)
+        .responseJSON { (response) in
+            let result = response.result
+            var thisWeekGraphData = [ThisWeekResponse]()
+            switch result {
+            case .success(let value as [String: Any]):
+                print("통신성공")
+                print(value)
+                
+                // value 디코딩해야함 -> ThisWeekResponse
+//                let thisWeekResponse = try? JSONDecoder().decode(ThisWeekResponse.self, from: response.data)
+
+                if let data = value as? [Dictionary<String, AnyObject>] {
+                    print(data.count)
+                    data.forEach {
+                        thisWeekGraphData.append(ThisWeekResponse(thisWeekDictionary: $0))
+                    }
+                }
+                
+                print("thisWeek count \(thisWeekGraphData.count)")
+                      
+            case .failure(let error):
+                print(error.localizedDescription)
+                
+            default:
+                fatalError()
+            }
+        }
     }
     
     func separateNumberAndUnit(from string: String) -> (Double, String)? {

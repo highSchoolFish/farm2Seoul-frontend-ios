@@ -121,7 +121,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gmA-us-xm5">
-                                <rect key="frame" x="0.0" y="259" width="393" height="559"/>
+                                <rect key="frame" x="16" y="259" width="361" height="499"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="L9U-eD-ADh">
                                     <size key="itemSize" width="128" height="128"/>
@@ -131,29 +131,101 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="FUL-ba-lvr">
-                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="TU8-1f-g5f">
-                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MFe-k8-z4y">
+                                <rect key="frame" x="16" y="768" width="361" height="50"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="bu3-nv-GWx">
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYP-OB-58u">
+                                                <rect key="frame" x="0.0" y="0.0" width="169.66666666666666" height="50"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="취소"/>
+                                                <connections>
+                                                    <action selector="cancelButtonTapped:" destination="wgC-ij-TZc" eventType="touchUpInside" id="zte-Fm-HOh"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJc-hS-vNA">
+                                                <rect key="frame" x="191.66666666666663" y="0.0" width="169.33333333333337" height="50"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="저장"/>
+                                                <connections>
+                                                    <action selector="saveButtonTapped:" destination="wgC-ij-TZc" eventType="touchUpInside" id="nzQ-LD-cPm"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="FHQ-fh-SYC"/>
+                                    <constraint firstAttribute="bottom" secondItem="bu3-nv-GWx" secondAttribute="bottom" id="hS0-2S-Rn5"/>
+                                    <constraint firstAttribute="trailing" secondItem="bu3-nv-GWx" secondAttribute="trailing" id="ho2-bf-uiB"/>
+                                    <constraint firstItem="bu3-nv-GWx" firstAttribute="top" secondItem="MFe-k8-z4y" secondAttribute="top" id="koy-Ki-lqF"/>
+                                    <constraint firstItem="bu3-nv-GWx" firstAttribute="leading" secondItem="MFe-k8-z4y" secondAttribute="leading" id="u85-eY-Udp"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kbS-xm-P9l">
+                                <rect key="frame" x="16" y="768" width="361" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ACN-hS-Udd">
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="o2r-Aw-VZh"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="추가"/>
+                                        <connections>
+                                            <action selector="addButtonTapped:" destination="wgC-ij-TZc" eventType="touchUpInside" id="Zw2-Jq-QUs"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="ACN-hS-Udd" firstAttribute="top" secondItem="kbS-xm-P9l" secondAttribute="top" id="7SM-Yj-r4Q"/>
+                                    <constraint firstAttribute="bottom" secondItem="ACN-hS-Udd" secondAttribute="bottom" id="CCB-xa-9CT"/>
+                                    <constraint firstAttribute="height" constant="50" id="SxE-yg-WEm"/>
+                                    <constraint firstAttribute="trailing" secondItem="ACN-hS-Udd" secondAttribute="trailing" id="r9K-x2-0lv"/>
+                                    <constraint firstItem="ACN-hS-Udd" firstAttribute="leading" secondItem="kbS-xm-P9l" secondAttribute="leading" id="wgR-PQ-J1n"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Cog-ar-6TX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="gmA-us-xm5" firstAttribute="trailing" secondItem="Cog-ar-6TX" secondAttribute="trailing" id="HF5-ZB-bjU"/>
-                            <constraint firstItem="Cog-ar-6TX" firstAttribute="bottom" secondItem="gmA-us-xm5" secondAttribute="bottom" id="JCQ-oH-IY1"/>
-                            <constraint firstItem="gmA-us-xm5" firstAttribute="leading" secondItem="Cog-ar-6TX" secondAttribute="leading" id="dV0-5v-B2T"/>
+                            <constraint firstItem="Cog-ar-6TX" firstAttribute="trailing" secondItem="MFe-k8-z4y" secondAttribute="trailing" constant="16" id="AMr-Wh-vcC"/>
+                            <constraint firstItem="gmA-us-xm5" firstAttribute="leading" secondItem="Cog-ar-6TX" secondAttribute="leading" constant="16" id="DCu-0j-C8b"/>
+                            <constraint firstItem="MFe-k8-z4y" firstAttribute="leading" secondItem="Cog-ar-6TX" secondAttribute="leading" constant="16" id="KLB-3b-b3h"/>
+                            <constraint firstItem="Cog-ar-6TX" firstAttribute="bottom" secondItem="MFe-k8-z4y" secondAttribute="bottom" id="ZCN-6n-ME9"/>
+                            <constraint firstItem="Cog-ar-6TX" firstAttribute="trailing" secondItem="kbS-xm-P9l" secondAttribute="trailing" constant="16" id="dcc-Re-VIk"/>
+                            <constraint firstItem="Cog-ar-6TX" firstAttribute="bottom" secondItem="kbS-xm-P9l" secondAttribute="bottom" id="fdu-sK-TaR"/>
+                            <constraint firstAttribute="trailing" secondItem="gmA-us-xm5" secondAttribute="trailing" constant="16" id="jYv-N5-s5w"/>
+                            <constraint firstItem="kbS-xm-P9l" firstAttribute="leading" secondItem="Cog-ar-6TX" secondAttribute="leading" constant="16" id="jns-Sc-Yjs"/>
                             <constraint firstItem="gmA-us-xm5" firstAttribute="top" secondItem="Cog-ar-6TX" secondAttribute="top" constant="200" id="sxM-hC-t3D"/>
+                            <constraint firstItem="kbS-xm-P9l" firstAttribute="top" secondItem="gmA-us-xm5" secondAttribute="bottom" constant="10" id="uQ0-Mh-KdI"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addButton" destination="ACN-hS-Udd" id="snx-rZ-W7B"/>
+                        <outlet property="addView" destination="MFe-k8-z4y" id="xf6-2U-lTh"/>
+                        <outlet property="bookmarkCollectionView" destination="gmA-us-xm5" id="iPh-OF-4hb"/>
+                        <outlet property="cancelButton" destination="dYP-OB-58u" id="lWt-Bt-9pG"/>
+                        <outlet property="initView" destination="kbS-xm-P9l" id="bxf-08-Ldc"/>
+                        <outlet property="saveButton" destination="PJc-hS-vNA" id="Vgh-KM-M0n"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TWG-Ol-bfB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="995" y="177"/>
+            <point key="canvasLocation" x="994.6564885496183" y="176.7605633802817"/>
         </scene>
         <!--Daily Auction View Controller-->
         <scene sceneID="jME-Fx-9o1">
@@ -545,6 +617,9 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="172.66666666666666" height="534"/>
                                                                 <inset key="imageEdgeInsets" minX="40" minY="0.0" maxX="40" maxY="0.0"/>
                                                                 <state key="normal" image="SeoulMarkImage"/>
+                                                                <connections>
+                                                                    <action selector="corporationButtonTapped:" destination="hp5-cV-oP3" eventType="touchDragInside" id="cLS-7a-pEL"/>
+                                                                </connections>
                                                             </button>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="FmS-pV-YVK">
                                                                 <rect key="frame" x="188.66666666666663" y="0.0" width="172.33333333333337" height="534"/>
@@ -905,19 +980,19 @@
         <image name="SearchIcon" width="18" height="18"/>
         <image name="SeoulMarkImage" width="147" height="774"/>
         <namedColor name="AveragePriceLabelColor">
-            <color red="0.81960784313725488" green="0.32941176470588235" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.81999999284744263" green="0.32899999618530273" blue="0.32899999618530273" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="LineViewColor">
-            <color red="0.82745098039215681" green="0.82745098039215681" blue="0.82745098039215681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.82700002193450928" green="0.82700002193450928" blue="0.82700002193450928" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="MainColor">
             <color red="0.17299999296665192" green="0.31400001049041748" blue="0.2669999897480011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="PriceLabelColor">
-            <color red="0.25882352941176473" green="0.25882352941176473" blue="0.25882352941176473" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.25900000333786011" green="0.25900000333786011" blue="0.25900000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="SearchBarColor">
-            <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.96100002527236938" green="0.96100002527236938" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="WeightLabelColor">
             <color red="0.59607843137254901" green="0.59607843137254901" blue="0.59607843137254901" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

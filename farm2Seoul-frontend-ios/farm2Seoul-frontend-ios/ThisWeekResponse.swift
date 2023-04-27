@@ -6,13 +6,16 @@
 //
 
 import Foundation
+import SwiftyJSON
 
-class ThisWeekResponse {
+class ThisWeekResponse: Codable {
     let dayOfWeek: String
     let average: Int
-    
-    init(dayOfWeek: String, average: Int) {
-            self.dayOfWeek = dayOfWeek
-            self.average = average
-        }
+
+    init(thisWeekDictionary:Dictionary<String,Any>) {
+        let data = JSON(thisWeekDictionary)
+        self.dayOfWeek = data["dayOfWeek"].stringValue
+        self.average = data["average"].int ?? 0
+    }
 }
+

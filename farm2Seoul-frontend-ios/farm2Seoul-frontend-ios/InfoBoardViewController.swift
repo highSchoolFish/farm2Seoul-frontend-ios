@@ -109,24 +109,28 @@ class InfoBoardViewController: UIViewController, UIGestureRecognizerDelegate {
         marketImageView.image = UIImage(named: marketImages[pageControl.currentPage])
     }
     
+    @IBAction func corporationButtonTapped(_ sender: UIButton){
+        guard let webKitVC =  storyboard?.instantiateViewController(identifier: "WebKitVC") as? WebKitViewController else
+        { return }
+        
+        webKitVC.urlString = "https://www.garak.co.kr/main/main.do"
+    }
+    
     @objc func noticeButtonTapped(_ sender: UITapGestureRecognizer) {
         print("noticeButtonTapped")
-        //        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "CommunityVC") else {
-        //            print("guard fail")
-        //            return
-        //        }
-        //        vc.modalPresentationStyle = .fullScreen
-        //        self.present(vc, animated: true)
+        
+        guard let webKitVC =  storyboard?.instantiateViewController(identifier: "WebKitVC") as? WebKitViewController else
+        { return }
+        
+        webKitVC.urlString = "https://www.garak.co.kr/bbs/selectPageListBbs.do?bbs_code=B0004"
     }
     
     @objc func reportButtonTapped(_ sender: UITapGestureRecognizer) {
         print("tapped")
-        //        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "CommunityVC") else {
-        //            print("guard fail")
-        //            return
-        //        }
-        //        vc.modalPresentationStyle = .fullScreen
-        //        self.present(vc, animated: true)
+        guard let webKitVC =  storyboard?.instantiateViewController(identifier: "WebKitVC") as? WebKitViewController else
+        { return }
+        
+        webKitVC.urlString = "https://www.garak.co.kr/chulha/indexChulha.do"
     }
     
     @objc func auctionTimeButtonTapped(_ sender: UITapGestureRecognizer) {
@@ -172,20 +176,18 @@ class InfoBoardViewController: UIViewController, UIGestureRecognizerDelegate {
             default:
                 break
             }
-            //
-//            guard let webKitVC = self.storyboard?.instantiateViewController(withIdentifier: "WebKitVC") else {
-//                print("guard fail")
-//                return
-//            }
             print(webKitVC.urlString)
             webKitVC.modalPresentationStyle = .fullScreen
             self.present(webKitVC, animated: true)
-            // Use the index value here
         }
     }
     
     @IBAction func iNuriButtonTapped(_ sender: UIButton){
         print("iNuriButtonTapped")
+        guard let webKitVC =  storyboard?.instantiateViewController(identifier: "WebKitVC") as? WebKitViewController else
+        { return }
+        
+        webKitVC.urlString = "https://inuri30.garak.co.kr/main/main.do"
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){

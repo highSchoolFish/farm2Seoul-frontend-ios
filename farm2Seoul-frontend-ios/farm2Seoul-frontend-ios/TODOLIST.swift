@@ -37,3 +37,9 @@
 // 키보드 올라온 뒤 배경 누르면 키보드 내리기
 // SearchImageButton 터치이벤트 구현
 // TabMan + topView 높이 구해서 다른 VC에서 그만큼 topAnchor 수정하기
+
+// bookmark 탭 들어가면
+// 처음에 내가 북마크 한 cell만 보여야함 -> productBookmarkedData == coredata.read
+// 이후 추가 버튼을 누르면 전체 cell 보여야함 -> productAllData
+// 거기서 cell 선택한 것들을 이미지 노랗게 바꾸고
+// 저장 버튼 누르면 coredata.add
