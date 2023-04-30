@@ -29,10 +29,10 @@
 		07BE475829FA5D120074F544 /* BookmarkCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07BE475629FA5D120074F544 /* BookmarkCollectionViewCell.xib */; };
 		07BE475D29FA804F0074F544 /* Bookmarks+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BE475C29FA804F0074F544 /* Bookmarks+CoreDataClass.swift */; };
 		07BE475E29FA804F0074F544 /* Bookmarks+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BE475B29FA804F0074F544 /* Bookmarks+CoreDataProperties.swift */; };
+		07BE476229FE40890074F544 /* CheckGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BE476129FE40890074F544 /* CheckGraphViewController.swift */; };
 		07F4E85029EFBFD700A70F2B /* DailyAuctionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4E84F29EFBFD700A70F2B /* DailyAuctionResponse.swift */; };
 		07F4E85329EFC22400A70F2B /* DailyAuctionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4E85129EFC22400A70F2B /* DailyAuctionCollectionViewCell.swift */; };
 		07F4E85429EFC22400A70F2B /* DailyAuctionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07F4E85229EFC22400A70F2B /* DailyAuctionCollectionViewCell.xib */; };
-		07F4E85629EFF8FD00A70F2B /* TODOLIST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4E85529EFF8FD00A70F2B /* TODOLIST.swift */; };
 		8ED956544212C8D4D97D41D4 /* Pods_farm2Seoul_frontend_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED92C44E9F23F1013A5BC3DB /* Pods_farm2Seoul_frontend_ios.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,10 +61,10 @@
 		07BE475629FA5D120074F544 /* BookmarkCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookmarkCollectionViewCell.xib; sourceTree = "<group>"; };
 		07BE475B29FA804F0074F544 /* Bookmarks+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Bookmarks+CoreDataProperties.swift"; path = "/Users/bhyn/Desktop/farm2Seoul-frontend-ios/farm2Seoul-frontend-ios/farm2Seoul-frontend-ios/Bookmarks+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		07BE475C29FA804F0074F544 /* Bookmarks+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Bookmarks+CoreDataClass.swift"; path = "/Users/bhyn/Desktop/farm2Seoul-frontend-ios/farm2Seoul-frontend-ios/farm2Seoul-frontend-ios/Bookmarks+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		07BE476129FE40890074F544 /* CheckGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckGraphViewController.swift; sourceTree = "<group>"; };
 		07F4E84F29EFBFD700A70F2B /* DailyAuctionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyAuctionResponse.swift; sourceTree = "<group>"; };
 		07F4E85129EFC22400A70F2B /* DailyAuctionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyAuctionCollectionViewCell.swift; sourceTree = "<group>"; };
 		07F4E85229EFC22400A70F2B /* DailyAuctionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyAuctionCollectionViewCell.xib; sourceTree = "<group>"; };
-		07F4E85529EFF8FD00A70F2B /* TODOLIST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOLIST.swift; sourceTree = "<group>"; };
 		648DF574E715156B7018A87A /* Pods-farm2Seoul-frontend-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-farm2Seoul-frontend-ios.debug.xcconfig"; path = "Target Support Files/Pods-farm2Seoul-frontend-ios/Pods-farm2Seoul-frontend-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		ED92C44E9F23F1013A5BC3DB /* Pods_farm2Seoul_frontend_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_farm2Seoul_frontend_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDBE4ED4CE51AB2151E586A5 /* Pods-farm2Seoul-frontend-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-farm2Seoul-frontend-ios.release.xcconfig"; path = "Target Support Files/Pods-farm2Seoul-frontend-ios/Pods-farm2Seoul-frontend-ios.release.xcconfig"; sourceTree = "<group>"; };
@@ -121,7 +121,6 @@
 				07F4E84F29EFBFD700A70F2B /* DailyAuctionResponse.swift */,
 				07F4E85129EFC22400A70F2B /* DailyAuctionCollectionViewCell.swift */,
 				07F4E85229EFC22400A70F2B /* DailyAuctionCollectionViewCell.xib */,
-				07F4E85529EFF8FD00A70F2B /* TODOLIST.swift */,
 				0770F9B429F7B1180096BCAE /* MarketCollectionViewCell.swift */,
 				0770F9B529F7B1180096BCAE /* MarketCollectionViewCell.xib */,
 				0770F9BA29F7EC150096BCAE /* AuctionTimeViewController.swift */,
@@ -130,6 +129,7 @@
 				07BE475329FA581A0074F544 /* LastThreeMonthsResponse.swift */,
 				07BE475529FA5D120074F544 /* BookmarkCollectionViewCell.swift */,
 				07BE475629FA5D120074F544 /* BookmarkCollectionViewCell.xib */,
+				07BE476129FE40890074F544 /* CheckGraphViewController.swift */,
 			);
 			path = "farm2Seoul-frontend-ios";
 			sourceTree = "<group>";
@@ -276,6 +276,7 @@
 				07BE475229FA57B80074F544 /* LastFourWeeksResponse.swift in Sources */,
 				07F4E85329EFC22400A70F2B /* DailyAuctionCollectionViewCell.swift in Sources */,
 				07F4E85029EFBFD700A70F2B /* DailyAuctionResponse.swift in Sources */,
+				07BE476229FE40890074F544 /* CheckGraphViewController.swift in Sources */,
 				07B4C66B29EE83D200E09E24 /* DailyAuctionViewController.swift in Sources */,
 				07BE475429FA581A0074F544 /* LastThreeMonthsResponse.swift in Sources */,
 				07BE475E29FA804F0074F544 /* Bookmarks+CoreDataProperties.swift in Sources */,
@@ -285,7 +286,6 @@
 				07B4C65429EE805300E09E24 /* AppDelegate.swift in Sources */,
 				0770F9B929F7DFA60096BCAE /* WebKitViewController.swift in Sources */,
 				07BE475729FA5D120074F544 /* BookmarkCollectionViewCell.swift in Sources */,
-				07F4E85629EFF8FD00A70F2B /* TODOLIST.swift in Sources */,
 				0770F9B629F7B1180096BCAE /* MarketCollectionViewCell.swift in Sources */,
 				07B4C65629EE805300E09E24 /* SceneDelegate.swift in Sources */,
 				07BE475D29FA804F0074F544 /* Bookmarks+CoreDataClass.swift in Sources */,
@@ -442,8 +442,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -475,8 +475,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

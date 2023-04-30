@@ -16,6 +16,9 @@ class ThisWeekResponse: Codable {
         let data = JSON(thisWeekDictionary)
         self.dayOfWeek = data["dayOfWeek"].stringValue
         self.average = data["average"].int ?? 0
+        print(self.dayOfWeek)
+        print(self.average)
+
     }
 }
 

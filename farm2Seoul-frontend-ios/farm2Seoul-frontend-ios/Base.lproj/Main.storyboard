@@ -120,26 +120,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gmA-us-xm5">
-                                <rect key="frame" x="16" y="259" width="361" height="499"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="L9U-eD-ADh">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="FUL-ba-lvr">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="TU8-1f-g5f">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MFe-k8-z4y">
                                 <rect key="frame" x="16" y="768" width="361" height="50"/>
                                 <subviews>
@@ -148,16 +128,22 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYP-OB-58u">
                                                 <rect key="frame" x="0.0" y="0.0" width="169.66666666666666" height="50"/>
+                                                <color key="backgroundColor" name="DailyAuctionBackgroundColor"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="취소"/>
+                                                <state key="normal" title="취소">
+                                                    <color key="titleColor" name="NotSelectedButtonTitleColor"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="cancelButtonTapped:" destination="wgC-ij-TZc" eventType="touchUpInside" id="zte-Fm-HOh"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJc-hS-vNA">
                                                 <rect key="frame" x="191.66666666666663" y="0.0" width="169.33333333333337" height="50"/>
+                                                <color key="backgroundColor" name="MainColor"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="저장"/>
+                                                <state key="normal" title="저장">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="saveButtonTapped:" destination="wgC-ij-TZc" eventType="touchUpInside" id="nzQ-LD-cPm"/>
                                                 </connections>
@@ -179,11 +165,14 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ACN-hS-Udd">
                                         <rect key="frame" x="0.0" y="0.0" width="361" height="50"/>
+                                        <color key="backgroundColor" name="DailyAuctionBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="o2r-Aw-VZh"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="추가"/>
+                                        <state key="normal" title="추가">
+                                            <color key="titleColor" name="NotSelectedButtonTitleColor"/>
+                                        </state>
                                         <connections>
                                             <action selector="addButtonTapped:" destination="wgC-ij-TZc" eventType="touchUpInside" id="Zw2-Jq-QUs"/>
                                         </connections>
@@ -198,16 +187,99 @@
                                     <constraint firstItem="ACN-hS-Udd" firstAttribute="leading" secondItem="kbS-xm-P9l" secondAttribute="leading" id="wgR-PQ-J1n"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nQ3-hw-njv">
+                                <rect key="frame" x="16" y="259" width="361" height="559"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Edo-hV-uMK">
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C6S-s6-NkY">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="7DP-Zi-IFV"/>
+                                                    <constraint firstAttribute="width" constant="50" id="DBV-4R-wJ2"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="BackButtonImage"/>
+                                                <connections>
+                                                    <action selector="backButtonTapped:" destination="wgC-ij-TZc" eventType="touchUpInside" id="1aZ-zy-9jZ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="C6S-s6-NkY" firstAttribute="top" secondItem="Edo-hV-uMK" secondAttribute="top" id="4oN-Wp-t2K"/>
+                                            <constraint firstAttribute="bottom" secondItem="C6S-s6-NkY" secondAttribute="bottom" id="7Gb-y1-1kk"/>
+                                            <constraint firstItem="C6S-s6-NkY" firstAttribute="leading" secondItem="Edo-hV-uMK" secondAttribute="leading" id="fqx-pE-bHM"/>
+                                            <constraint firstAttribute="height" constant="50" id="n0G-wU-YPP"/>
+                                        </constraints>
+                                    </view>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LNe-RW-cvz">
+                                        <rect key="frame" x="0.0" y="50" width="361" height="509"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WoU-bd-0Vk">
+                                            <size key="itemSize" width="128" height="128"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Vet-OO-k1r">
+                                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Tc3-8d-Axw">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </collectionViewCellContentView>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Edo-hV-uMK" firstAttribute="top" secondItem="nQ3-hw-njv" secondAttribute="top" id="3Wv-qJ-6cX"/>
+                                    <constraint firstItem="LNe-RW-cvz" firstAttribute="top" secondItem="Edo-hV-uMK" secondAttribute="bottom" id="8k3-Ba-onb"/>
+                                    <constraint firstAttribute="bottom" secondItem="LNe-RW-cvz" secondAttribute="bottom" id="DbV-7D-JVM"/>
+                                    <constraint firstAttribute="trailing" secondItem="LNe-RW-cvz" secondAttribute="trailing" id="c9g-TH-phQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="Edo-hV-uMK" secondAttribute="trailing" id="gfX-mX-JwY"/>
+                                    <constraint firstItem="Edo-hV-uMK" firstAttribute="leading" secondItem="nQ3-hw-njv" secondAttribute="leading" id="i34-fB-bMG"/>
+                                    <constraint firstItem="LNe-RW-cvz" firstAttribute="leading" secondItem="nQ3-hw-njv" secondAttribute="leading" id="q4j-jg-Lb1"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gmA-us-xm5">
+                                <rect key="frame" x="16" y="259" width="361" height="499"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="L9U-eD-ADh">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="FUL-ba-lvr">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="TU8-1f-g5f">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Cog-ar-6TX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Cog-ar-6TX" firstAttribute="bottom" secondItem="nQ3-hw-njv" secondAttribute="bottom" id="3yp-Eh-nn4"/>
                             <constraint firstItem="Cog-ar-6TX" firstAttribute="trailing" secondItem="MFe-k8-z4y" secondAttribute="trailing" constant="16" id="AMr-Wh-vcC"/>
                             <constraint firstItem="gmA-us-xm5" firstAttribute="leading" secondItem="Cog-ar-6TX" secondAttribute="leading" constant="16" id="DCu-0j-C8b"/>
+                            <constraint firstItem="nQ3-hw-njv" firstAttribute="leading" secondItem="Cog-ar-6TX" secondAttribute="leading" constant="16" id="DuC-QN-H3m"/>
                             <constraint firstItem="MFe-k8-z4y" firstAttribute="leading" secondItem="Cog-ar-6TX" secondAttribute="leading" constant="16" id="KLB-3b-b3h"/>
+                            <constraint firstItem="nQ3-hw-njv" firstAttribute="top" secondItem="Cog-ar-6TX" secondAttribute="top" constant="200" id="Yos-Un-wr6"/>
                             <constraint firstItem="Cog-ar-6TX" firstAttribute="bottom" secondItem="MFe-k8-z4y" secondAttribute="bottom" id="ZCN-6n-ME9"/>
                             <constraint firstItem="Cog-ar-6TX" firstAttribute="trailing" secondItem="kbS-xm-P9l" secondAttribute="trailing" constant="16" id="dcc-Re-VIk"/>
                             <constraint firstItem="Cog-ar-6TX" firstAttribute="bottom" secondItem="kbS-xm-P9l" secondAttribute="bottom" id="fdu-sK-TaR"/>
+                            <constraint firstItem="Cog-ar-6TX" firstAttribute="trailing" secondItem="nQ3-hw-njv" secondAttribute="trailing" constant="16" id="ggA-67-KWh"/>
                             <constraint firstAttribute="trailing" secondItem="gmA-us-xm5" secondAttribute="trailing" constant="16" id="jYv-N5-s5w"/>
                             <constraint firstItem="kbS-xm-P9l" firstAttribute="leading" secondItem="Cog-ar-6TX" secondAttribute="leading" constant="16" id="jns-Sc-Yjs"/>
                             <constraint firstItem="gmA-us-xm5" firstAttribute="top" secondItem="Cog-ar-6TX" secondAttribute="top" constant="200" id="sxM-hC-t3D"/>
@@ -217,8 +289,11 @@
                     <connections>
                         <outlet property="addButton" destination="ACN-hS-Udd" id="snx-rZ-W7B"/>
                         <outlet property="addView" destination="MFe-k8-z4y" id="xf6-2U-lTh"/>
+                        <outlet property="backButton" destination="C6S-s6-NkY" id="pvp-Oa-vxk"/>
                         <outlet property="bookmarkCollectionView" destination="gmA-us-xm5" id="iPh-OF-4hb"/>
+                        <outlet property="bookmarkDetailCollectionView" destination="LNe-RW-cvz" id="jDP-ae-L4y"/>
                         <outlet property="cancelButton" destination="dYP-OB-58u" id="lWt-Bt-9pG"/>
+                        <outlet property="detailView" destination="nQ3-hw-njv" id="9vp-Cg-Rz6"/>
                         <outlet property="initView" destination="kbS-xm-P9l" id="bxf-08-Ldc"/>
                         <outlet property="saveButton" destination="PJc-hS-vNA" id="Vgh-KM-M0n"/>
                     </connections>
@@ -275,7 +350,83 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x3L-Bg-la4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3141" y="177"/>
+            <point key="canvasLocation" x="-3141.2213740458014" y="176.7605633802817"/>
+        </scene>
+        <!--Check Graph View Controller-->
+        <scene sceneID="NzH-Up-cO6">
+            <objects>
+                <viewController storyboardIdentifier="GraphVC" id="zh7-in-t4G" customClass="CheckGraphViewController" customModule="farm2Seoul_frontend_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eaB-H4-GSn">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qyd-dc-s04" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="59" width="393" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="wav-jN-X7R"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="CGB-F6-jRc">
+                                <rect key="frame" x="16" y="269" width="361" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gru-fD-M2D">
+                                        <rect key="frame" x="0.0" y="0.0" width="107" height="40"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="thisWeekButtonTapped:" destination="zh7-in-t4G" eventType="touchUpInside" id="5SZ-z1-Vza"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XBg-Bz-kdH">
+                                        <rect key="frame" x="127" y="0.0" width="107" height="40"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="lastFourWeeksButtonTapped:" destination="zh7-in-t4G" eventType="touchUpInside" id="SRC-u2-lnn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OME-EK-mVS">
+                                        <rect key="frame" x="254" y="0.0" width="107" height="40"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="lastThreeMonthsButtonTapped:" destination="zh7-in-t4G" eventType="touchUpInside" id="6WS-ex-r9g"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="XfM-3a-kdM"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Qm2-BD-2UR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CGB-F6-jRc" firstAttribute="leading" secondItem="Qm2-BD-2UR" secondAttribute="leading" constant="16" id="0P8-Mn-oED"/>
+                            <constraint firstItem="Qyd-dc-s04" firstAttribute="top" secondItem="Qm2-BD-2UR" secondAttribute="top" id="8m3-qs-pMx"/>
+                            <constraint firstItem="CGB-F6-jRc" firstAttribute="top" secondItem="Qyd-dc-s04" secondAttribute="bottom" constant="10" id="DXa-DV-wqP"/>
+                            <constraint firstItem="Qyd-dc-s04" firstAttribute="leading" secondItem="Qm2-BD-2UR" secondAttribute="leading" id="Tev-MR-EPV"/>
+                            <constraint firstItem="Qm2-BD-2UR" firstAttribute="trailing" secondItem="Qyd-dc-s04" secondAttribute="trailing" id="uTw-fs-HBV"/>
+                            <constraint firstItem="Qm2-BD-2UR" firstAttribute="trailing" secondItem="CGB-F6-jRc" secondAttribute="trailing" constant="16" id="yhh-YJ-aPY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lastFourWeeksButton" destination="XBg-Bz-kdH" id="SLq-LG-YHU"/>
+                        <outlet property="lastThreeMonthsButton" destination="OME-EK-mVS" id="bg5-aY-AWO"/>
+                        <outlet property="lineChartView" destination="Qyd-dc-s04" id="MdK-UJ-jxL"/>
+                        <outlet property="thisWeekButton" destination="Gru-fD-M2D" id="yx3-fK-pbX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vsZ-mW-6tW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4091" y="882"/>
         </scene>
         <!--Detail Info View Controller-->
         <scene sceneID="T4l-hS-Rvv">
@@ -436,24 +587,30 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6iD-Uf-WxM">
                                         <rect key="frame" x="0.0" y="0.0" width="107" height="40"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="thisWeekButtonTapped:" destination="VYW-6P-yga" eventType="touchUpInside" id="0ph-Ir-5TS"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oNP-Ba-aPZ">
                                         <rect key="frame" x="127" y="0.0" width="107" height="40"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="lastFourWeeksButtonTapped:" destination="VYW-6P-yga" eventType="touchUpInside" id="q3m-nY-xgr"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="arv-EU-AHy">
                                         <rect key="frame" x="254" y="0.0" width="107" height="40"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="lastThreeMonthsButtonTapped:" destination="VYW-6P-yga" eventType="touchUpInside" id="84Z-gl-cVM"/>
                                         </connections>
@@ -463,7 +620,7 @@
                                     <constraint firstAttribute="height" constant="40" id="vfF-kn-GMk"/>
                                 </constraints>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q3g-Eq-hAV">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q3g-Eq-hAV" customClass="LineChartView" customModule="Charts">
                                 <rect key="frame" x="16" y="451.33333333333326" width="361" height="200"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -490,9 +647,9 @@
                     </view>
                     <connections>
                         <outlet property="averagePriceLabel" destination="RlI-5P-1ij" id="YiE-Bn-qxj"/>
-                        <outlet property="graphView" destination="Q3g-Eq-hAV" id="o6z-wv-ycG"/>
                         <outlet property="lastFourWeeksButton" destination="oNP-Ba-aPZ" id="gE1-I7-6D6"/>
                         <outlet property="lastThreeMonthsButton" destination="arv-EU-AHy" id="W2e-Wz-KUN"/>
+                        <outlet property="lineChartView" destination="Q3g-Eq-hAV" id="cYT-B0-Psz"/>
                         <outlet property="maximumPriceLabel" destination="aHv-YT-hUo" id="XDQ-EB-yVL"/>
                         <outlet property="minimumPriceLabel" destination="94U-tc-ybr" id="nkZ-9a-QuL"/>
                         <outlet property="navTitle" destination="nqs-fX-wWx" id="SgW-7r-ZCQ"/>
@@ -615,7 +772,7 @@
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="brL-w0-qx0">
                                                                 <rect key="frame" x="0.0" y="0.0" width="172.66666666666666" height="534"/>
-                                                                <inset key="imageEdgeInsets" minX="40" minY="0.0" maxX="40" maxY="0.0"/>
+                                                                <inset key="imageEdgeInsets" minX="40" minY="30" maxX="40" maxY="30"/>
                                                                 <state key="normal" image="SeoulMarkImage"/>
                                                                 <connections>
                                                                     <action selector="corporationButtonTapped:" destination="hp5-cV-oP3" eventType="touchDragInside" id="cLS-7a-pEL"/>
@@ -709,8 +866,11 @@
                                                             </stackView>
                                                         </subviews>
                                                         <constraints>
+                                                            <constraint firstItem="brL-w0-qx0" firstAttribute="top" secondItem="7CD-B3-Ip4" secondAttribute="top" id="DHf-rC-8To"/>
                                                             <constraint firstItem="FmS-pV-YVK" firstAttribute="top" secondItem="7CD-B3-Ip4" secondAttribute="top" id="Lof-BV-fNm"/>
+                                                            <constraint firstItem="brL-w0-qx0" firstAttribute="leading" secondItem="7CD-B3-Ip4" secondAttribute="leading" id="d4g-1F-1sy"/>
                                                             <constraint firstAttribute="bottom" secondItem="FmS-pV-YVK" secondAttribute="bottom" id="era-v1-1Zn"/>
+                                                            <constraint firstAttribute="bottom" secondItem="brL-w0-qx0" secondAttribute="bottom" id="xCx-hz-ZxX"/>
                                                         </constraints>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ux-Md-bRe">
@@ -819,26 +979,33 @@
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="BackButtonImage"/>
+                                                <connections>
+                                                    <action selector="backButtonTapped:" destination="PU8-xh-1ri" eventType="touchUpInside" id="7hv-Oo-K2j"/>
+                                                </connections>
                                             </button>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Fxx-rg-yRJ">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Fxx-rg-yRJ">
                                                 <rect key="frame" x="16" y="35" width="361" height="50"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5N3-eI-AeA">
                                                         <rect key="frame" x="0.0" y="0.0" width="168.66666666666666" height="50"/>
-                                                        <color key="tintColor" systemColor="labelColor"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="가락시장"/>
+                                                        <color key="backgroundColor" name="MainColor"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="가락시장">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
                                                         <connections>
-                                                            <action selector="buttonTapped:" destination="PU8-xh-1ri" eventType="touchUpInside" id="MMC-wp-u7U"/>
+                                                            <action selector="garakButtonTapped:" destination="PU8-xh-1ri" eventType="touchUpInside" id="fgg-t7-1R9"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w8Q-eF-SrS">
                                                         <rect key="frame" x="192.66666666666663" y="0.0" width="168.33333333333337" height="50"/>
-                                                        <color key="tintColor" systemColor="labelColor"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="강서시장"/>
+                                                        <color key="backgroundColor" name="AuctionTimeInfoButtonColor"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="강서시장">
+                                                            <color key="titleColor" name="NotSelectedButtonTitleColor"/>
+                                                        </state>
                                                         <connections>
-                                                            <action selector="buttonTapped:" destination="PU8-xh-1ri" eventType="touchUpInside" id="rS9-o7-3Sp"/>
+                                                            <action selector="gangseoButtonTapped:" destination="PU8-xh-1ri" eventType="touchUpInside" id="emr-tr-Ooy"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -858,7 +1025,7 @@
                                                         <color key="textColor" name="MainColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GangSeoFruitImage" translatesAutoresizingMaskIntoConstraints="NO" id="TjN-XQ-SqZ">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GangSeoFruitImage" translatesAutoresizingMaskIntoConstraints="NO" id="TjN-XQ-SqZ">
                                                         <rect key="frame" x="0.0" y="40" width="361" height="215"/>
                                                     </imageView>
                                                 </subviews>
@@ -884,7 +1051,7 @@
                                                         <color key="textColor" name="MainColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GarakFruitImage" translatesAutoresizingMaskIntoConstraints="NO" id="WiH-4B-win">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GarakFruitImage" translatesAutoresizingMaskIntoConstraints="NO" id="WiH-4B-win">
                                                         <rect key="frame" x="0.0" y="40" width="361" height="513"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수산" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O2K-af-v1Z">
@@ -896,7 +1063,7 @@
                                                         <color key="textColor" name="MainColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GarakMarineImage" translatesAutoresizingMaskIntoConstraints="NO" id="0HR-nQ-kmr">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GarakMarineImage" translatesAutoresizingMaskIntoConstraints="NO" id="0HR-nQ-kmr">
                                                         <rect key="frame" x="0.0" y="603" width="361" height="245"/>
                                                     </imageView>
                                                 </subviews>
@@ -978,15 +1145,24 @@
         <image name="NoticeIcon" width="139" height="150"/>
         <image name="ReportIcon" width="150" height="170"/>
         <image name="SearchIcon" width="18" height="18"/>
-        <image name="SeoulMarkImage" width="147" height="774"/>
+        <image name="SeoulMarkImage" width="118" height="511"/>
+        <namedColor name="AuctionTimeInfoButtonColor">
+            <color red="0.98431372549019602" green="0.98431372549019602" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="AveragePriceLabelColor">
             <color red="0.81999999284744263" green="0.32899999618530273" blue="0.32899999618530273" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="DailyAuctionBackgroundColor">
+            <color red="0.98431372549019602" green="0.98431372549019602" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="LineViewColor">
             <color red="0.82700002193450928" green="0.82700002193450928" blue="0.82700002193450928" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="MainColor">
             <color red="0.17299999296665192" green="0.31400001049041748" blue="0.2669999897480011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="NotSelectedButtonTitleColor">
+            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="PriceLabelColor">
             <color red="0.25900000333786011" green="0.25900000333786011" blue="0.25900000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -997,9 +1173,6 @@
         <namedColor name="WeightLabelColor">
             <color red="0.59607843137254901" green="0.59607843137254901" blue="0.59607843137254901" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

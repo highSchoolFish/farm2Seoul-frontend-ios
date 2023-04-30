@@ -21,69 +21,49 @@ class AuctionTimeViewController: UIViewController {
         makeButton()
     }
     
-    @IBAction func buttonTapped(_ sender: UIButton) {
-        if garakButton.isSelected {
+    
+    @IBAction func garakButtonTapped(_ sender: UIButton) {
             // 가락버튼 true
             // 강서 false
             print("garak select")
             
-            print("garak \(garakButton.isSelected)")
-            print("gangseo \(gangseoButton.isSelected)")
-            
-            garakButton.isSelected = false
-            gangseoButton.isSelected = true
-            
             garakButton.backgroundColor = UIColor(named: "MainColor")
             gangseoButton.backgroundColor = UIColor(named: "AuctionTimeInfoButtonColor")
-            
+        garakButton.setTitleColor(UIColor.white, for: .normal)
+        gangseoButton.setTitleColor(UIColor(named: "NotSelectedButtonTitleColor"), for: .normal)
+
             garakMarketView.isHidden = false
             gangseoMarketView.isHidden = true
             
             garakButton.isEnabled = false
             gangseoButton.isEnabled = true
-        }
-        else {
+    }
+    
+    @IBAction func gangseoButtonTapped(_ sender: UIButton) {
             // 가락버튼 false
             // 강서 true
             print("garak unselect")
-            
-            print("garak \(garakButton.isSelected)")
-            print("gangseo \(gangseoButton.isSelected)")
-            garakButton.isSelected = true
-            gangseoButton.isSelected = false
             garakButton.backgroundColor = UIColor(named: "AuctionTimeInfoButtonColor")
             gangseoButton.backgroundColor = UIColor(named: "MainColor")
-            
+        garakButton.setTitleColor(UIColor(named: "NotSelectedButtonTitleColor"), for: .normal)
+
+        gangseoButton.setTitleColor(UIColor.white, for: .normal)
             garakMarketView.isHidden = true
             gangseoMarketView.isHidden = false
             
             garakButton.isEnabled = true
             gangseoButton.isEnabled = false
-        }
     }
-    
+
     func makeButton() {
-        // 가락버튼 true
-        // 강서 false
-        garakButton.isSelected = true
-        gangseoButton.isSelected = false
         garakButton.backgroundColor = UIColor(named: "MainColor")
         gangseoButton.backgroundColor = UIColor(named: "AuctionTimeInfoButtonColor")
         
         garakButton.setTitleColor(UIColor.white, for: .normal)
         gangseoButton.setTitleColor(UIColor(named: "NotSelectedButtonTitleColor"), for: .normal)
 
-        print("garak \(garakButton.isSelected)")
-        print("gangseo \(gangseoButton.isSelected)")
-        
-        garakButton.isSelected = false
-        gangseoButton.isSelected = true
-        
-        garakMarketView.isHidden = false
-        gangseoMarketView.isHidden = true
-        
         garakButton.isEnabled = false
-        gangseoButton.isEnabled = true
+        
         garakButton.clipsToBounds = true
         gangseoButton.clipsToBounds = true
         garakButton.layer.cornerRadius = 5
@@ -98,5 +78,13 @@ class AuctionTimeViewController: UIViewController {
         garakButton.layer.shadowOpacity = 0.5
         garakButton.layer.shadowRadius = 2
         garakButton.layer.masksToBounds = false
+    }
+    
+    @IBAction func backButtonTapped(_ sender: UIButton) {
+        backAction()
+    }
+    
+    @objc func backAction() {
+        dismiss(animated: true, completion: nil)
     }
 }

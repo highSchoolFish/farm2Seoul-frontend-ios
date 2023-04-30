@@ -114,6 +114,9 @@ class InfoBoardViewController: UIViewController, UIGestureRecognizerDelegate {
         { return }
         
         webKitVC.urlString = "https://www.garak.co.kr/main/main.do"
+        print(webKitVC.urlString)
+        webKitVC.modalPresentationStyle = .fullScreen
+        self.present(webKitVC, animated: true)
     }
     
     @objc func noticeButtonTapped(_ sender: UITapGestureRecognizer) {
@@ -123,6 +126,9 @@ class InfoBoardViewController: UIViewController, UIGestureRecognizerDelegate {
         { return }
         
         webKitVC.urlString = "https://www.garak.co.kr/bbs/selectPageListBbs.do?bbs_code=B0004"
+        print(webKitVC.urlString)
+        webKitVC.modalPresentationStyle = .fullScreen
+        self.present(webKitVC, animated: true)
     }
     
     @objc func reportButtonTapped(_ sender: UITapGestureRecognizer) {
@@ -131,6 +137,9 @@ class InfoBoardViewController: UIViewController, UIGestureRecognizerDelegate {
         { return }
         
         webKitVC.urlString = "https://www.garak.co.kr/chulha/indexChulha.do"
+        print(webKitVC.urlString)
+        webKitVC.modalPresentationStyle = .fullScreen
+        self.present(webKitVC, animated: true)
     }
     
     @objc func auctionTimeButtonTapped(_ sender: UITapGestureRecognizer) {
@@ -188,6 +197,9 @@ class InfoBoardViewController: UIViewController, UIGestureRecognizerDelegate {
         { return }
         
         webKitVC.urlString = "https://inuri30.garak.co.kr/main/main.do"
+        print(webKitVC.urlString)
+        webKitVC.modalPresentationStyle = .fullScreen
+        self.present(webKitVC, animated: true)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){

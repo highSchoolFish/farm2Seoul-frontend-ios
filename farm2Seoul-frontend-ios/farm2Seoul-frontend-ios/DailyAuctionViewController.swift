@@ -14,6 +14,8 @@ class DailyAuctionViewController: UIViewController, UIScrollViewDelegate{
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet var dailyAuctionCollectionView: UICollectionView!
+    
+    @IBOutlet weak var button: UIButton!
     var searchData:[DailyAuctionResponse] = []
     var dailyAuctionData:[DailyAuctionResponse] = []
     let interval = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
@@ -31,6 +33,16 @@ class DailyAuctionViewController: UIViewController, UIScrollViewDelegate{
         self.dailyAuctionCollectionView.register(UINib(nibName: "DailyAuctionCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "DailyAuctionCell")
         self.dailyAuctionCollectionView.dataSource = self
         self.dailyAuctionCollectionView.delegate = self
+        getCurrentDateTime()
+    }
+    
+    func getCurrentDateTime(){
+        let formatter = DateFormatter() //객체 생성
+        formatter.dateStyle = .long
+        formatter.timeStyle = .medium
+        formatter.dateFormat = "yyyy. MM. dd" //데이터 포멧 설정
+        let str = formatter.string(from: Date()) //문자열로 바꾸기
+        dateLabel.text = "\(str) 일별경매"   //라벨에 출력
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -138,6 +150,18 @@ class DailyAuctionViewController: UIViewController, UIScrollViewDelegate{
             }
         }
     }
+    
+    @IBAction func buttonTapped(_ sender: UIButton){
+        guard let graphVC = self.storyboard?.instantiateViewController(withIdentifier: "GraphVC") as? CheckGraphViewController else { return }
+        // 화면 전환 애니메이션 설정
+        graphVC.modalTransitionStyle = .coverVertical
+        // 전환된 화면이 보여지는 방법 설정 (fullScreen)
+        var detailData = "(냉)갈치"
+        graphVC.getDetailData(detailData: detailData)
+        
+        graphVC.modalPresentationStyle = .fullScreen
+        self.present(graphVC, animated: true, completion: nil)
+    }
 }
 
 extension DailyAuctionViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -198,6 +222,4 @@ extension DailyAuctionViewController: UICollectionViewDelegate, UICollectionView
         detailVC.modalPresentationStyle = .fullScreen
         self.present(detailVC, animated: true, completion: nil)
     }
-    
-    
 }
