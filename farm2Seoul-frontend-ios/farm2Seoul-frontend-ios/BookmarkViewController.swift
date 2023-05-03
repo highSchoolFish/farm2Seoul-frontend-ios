@@ -22,6 +22,7 @@ class BookmarkViewController: UIViewController {
     @IBOutlet var bookmarkDetailCollectionView: UICollectionView!
     @IBOutlet weak var detailView: UIView!
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var defaultView: UIView!
     
     let interval = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
     
@@ -44,13 +45,15 @@ class BookmarkViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(productBookmarkedData)
+        defaultView.isHidden = true
         bookmarkCollectionView.allowsMultipleSelection = true
         
         self.bookmarkCollectionView.register(UINib(nibName: "BookmarkCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "bookmarkCell")
         self.bookmarkCollectionView.dataSource = self
         self.bookmarkCollectionView.delegate = self
         
-        
+        self.bookmarkDetailCollectionView.register(UINib(nibName: "DailyAuctionCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "DailyAuctionCell")
+
         cancelButton.layer.cornerRadius = 5
         cancelButton.clipsToBounds = true
         cancelButton.layer.shadowOffset = CGSize(width: 0, height: 2)
@@ -75,10 +78,10 @@ class BookmarkViewController: UIViewController {
         addView.isHidden = true
         detailView.isHidden = true
         // delete all data
-        for managedObject in productBookmarkedData {
-            let string = managedObject.value(forKey: "productName") as? String ?? ""
-            deleteCoreData(productName: string)
-        }
+        //        for managedObject in productBookmarkedData {
+        //            let string = managedObject.value(forKey: "productName") as? String ?? ""
+        //            deleteCoreData(productName: string)
+        //        }
         
         // init
         for managedObject in productBookmarkedData {
@@ -89,7 +92,7 @@ class BookmarkViewController: UIViewController {
         print("VDL bookmarkedStringArr \(bookmarkedStringArr)")
         print("VDL selectedItems \(selectedItems)")
         setFlowLayout()
-
+        
     }
     
     func setFlowLayout() {
@@ -106,7 +109,7 @@ class BookmarkViewController: UIViewController {
         }
         if detailView.isHidden == false {
             print("flowLayout detailView")
-
+            
             flowLayout.minimumLineSpacing = 5
             flowLayout.minimumInteritemSpacing = 5
             let width: CGFloat = UIScreen.main.bounds.width / 2
@@ -185,13 +188,9 @@ class BookmarkViewController: UIViewController {
     @IBAction func backButtonTapped(_ sender: UIButton) {
         detailData.removeAll()
         detailView.isHidden = true
-        addView.isHidden = false
-
-//        for managedObject in productBookmarkedData {
-//            let string = managedObject.value(forKey: "productName") as? String ?? ""
-//            self.bookmarkedStringArr.append(string)
-//            showData.append(string)
-//        }
+        addView.isHidden = true
+        initView.isHidden = false
+        
         setFlowLayout()
         bookmarkCollectionView.isHidden = false
         print(showData)
@@ -302,6 +301,9 @@ extension BookmarkViewController: UICollectionViewDelegate, UICollectionViewData
             print("detailView")
             print("detailData.count \(detailData.count)")
             
+            if detailData.count == 0 {
+                defaultView.isHidden = true
+            }
             return detailData.count
         }
         return showData.count
@@ -309,67 +311,74 @@ extension BookmarkViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         print("cell create")
-        guard let bookmarkCell = collectionView.dequeueReusableCell(withReuseIdentifier: "bookmarkCell", for: indexPath) as? BookmarkCollectionViewCell else {
-            return UICollectionViewCell()
-        }
-//        bookmarkCell.bookmarkImageView.image = UIImage(named: "BookmarkUncheckedImage")
+        print("detailData count2 \(self.detailData.count)")
 
-        print("bookmarkCollectionView. is Hidden false")
-        
-        bookmarkCell.bookmarkImageView.contentMode = .scaleAspectFill
-        if initView.isHidden == false {
-            // initView 보여지고 있는 상태
-            // showData == 0 일 수 있음 (즐찾 없는 상태)
-            if showData.count != 0 {
-                bookmarkCell.productName.text = self.showData[indexPath.row]
-                bookmarkCell.bookmarkImageView.image = UIImage(named: "BookmarkCheckedImage")
-            }
-            return bookmarkCell
-        }
-        if addView.isHidden == false {
-            // addView 보여지고 있는 상태
-            // showData = allData
-            bookmarkCell.productName.text = self.showData[indexPath.row]
-            bookmarkCell.isSelected = selectedItems.contains(indexPath)
-            if bookmarkCell.isSelected {
-                print("\(bookmarkCell.productName) is selected")
-
-                bookmarkCell.bookmarkImageView.image = UIImage(named: "BookmarkCheckedImage")
-            }
-            if !bookmarkCell.isSelected {
-                print("\(bookmarkCell.productName) is not selected")
-                bookmarkCell.bookmarkImageView.image = UIImage(named: "BookmarkUncheckedImage")
-            }
-            return bookmarkCell
-
-        }
         if detailView.isHidden == false {
-            print("bookmarkCollectionView. is Hidden")
-
+            
             guard let auctionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "DailyAuctionCell", for: indexPath) as? DailyAuctionCollectionViewCell else {
                 return UICollectionViewCell()
             }
-
+            
             auctionCell.generateCell(dailyAuction:detailData[indexPath.item])
 
             return auctionCell
         }
-        return bookmarkCell
-        
+        else {
+            guard let bookmarkCell = collectionView.dequeueReusableCell(withReuseIdentifier: "bookmarkCell", for: indexPath) as? BookmarkCollectionViewCell else {
+                return UICollectionViewCell()
+            }
+            
+            bookmarkCell.bookmarkImageView.contentMode = .scaleAspectFill
+            if initView.isHidden == false {
+                // initView 보여지고 있는 상태
+                // showData == 0 일 수 있음 (즐찾 없는 상태)
+                if showData.count != 0 {
+                    bookmarkCell.productName.text = self.showData[indexPath.row]
+                    bookmarkCell.bookmarkImageView.image = UIImage(named: "BookmarkCheckedImage")
+                }
+                return bookmarkCell
+            }
+            if addView.isHidden == false {
+                // addView 보여지고 있는 상태
+                // showData = allData
+                bookmarkCell.productName.text = self.showData[indexPath.row]
+                bookmarkCell.isSelected = selectedItems.contains(indexPath)
+                if bookmarkCell.isSelected {
+                    print("\(bookmarkCell.productName) is selected")
+                    bookmarkCell.bookmarkImageView.image = UIImage(named: "BookmarkCheckedImage")
+                }
+                if !bookmarkCell.isSelected {
+                    print("\(bookmarkCell.productName) is not selected")
+                    bookmarkCell.bookmarkImageView.image = UIImage(named: "BookmarkUncheckedImage")
+                }
+                return bookmarkCell
+            }
+            return bookmarkCell
+        }
     }
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("cell selected")
-        print("cell selected \(indexPath)")
-        
+        if detailView.isHidden == false {
+            // 세부 탭에서 cell 선택 시
+            // detailInfoVC로 넘어가도록
+            guard let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailVC") as? DetailInfoViewController else { return }
+            // 화면 전환 애니메이션 설정
+            detailVC.modalTransitionStyle = .coverVertical
+            // 전환된 화면이 보여지는 방법 설정 (fullScreen)
+            let data = self.detailData[indexPath.row]
+            detailVC.getDetailData(detailData: data)
+            
+            detailVC.modalPresentationStyle = .fullScreen
+            self.present(detailVC, animated: true, completion: nil)
+        }
         // Update the appearance of the selected cell
         if addView.isHidden == false {
             guard let bookmarkCell = collectionView.dequeueReusableCell(withReuseIdentifier: "bookmarkCell", for: indexPath) as? BookmarkCollectionViewCell else {return}
             
             bookmarkCell.bookmarkImageView.contentMode = .scaleAspectFill
             if !selectedItems.contains(indexPath) {
-                print("new item")
+
                 selectedItems.append(indexPath)
                 tempSave.append(productAllData[indexPath.row])
                 if let index = tempDelete.firstIndex(of: productAllData[indexPath.row]) {
@@ -392,13 +401,11 @@ extension BookmarkViewController: UICollectionViewDelegate, UICollectionViewData
                     tempDelete.append(productAllData[indexPath.row])
                 }
             }
-            print("select tempSave \(tempSave)")
-            print("select tempDelete \(tempDelete)")
-            
             collectionView.reloadItems(at: [indexPath])
             
         }
         if initView.isHidden == false {
+            print("initView hidden")
             // 즐찾 내용 중 하나 선택 시
             // cell data 변경해야함
             detailData.removeAll()
@@ -428,40 +435,27 @@ extension BookmarkViewController: UICollectionViewDelegate, UICollectionViewData
                         }
                     }
                     self.detailData.append(contentsOf: auctions)
-                    print("auctions count1 \(auctions.count)")
                     print("detailData count1 \(self.detailData.count)")
                     
                     self.detailView.isHidden = false
                     self.bookmarkCollectionView.isHidden = true
                     self.addView.isHidden = true
+                    self.initView.isHidden = true
+                    self.bookmarkDetailCollectionView.dataSource = self
+                    self.bookmarkDetailCollectionView.delegate = self
+                    
                     self.bookmarkDetailCollectionView.reloadData()
                     
+                    self.bookmarkDetailCollectionView.isHidden = false
+
                 case .failure(let error):
                     print(error.localizedDescription)
-                    
                 default:
                     fatalError()
                 }
                 
             }
-            
-            
-            
         }
-        if detailView.isHidden == false {
-            // 세부 탭에서 cell 선택 시
-            // detailInfoVC로 넘어가도록
-            
-            guard let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailVC") as? DetailInfoViewController else { return }
-            // 화면 전환 애니메이션 설정
-            detailVC.modalTransitionStyle = .coverVertical
-            // 전환된 화면이 보여지는 방법 설정 (fullScreen)
-            let detailData = self.detailData[indexPath.row]
-            detailVC.getDetailData(detailData: detailData)
-            
-            detailVC.modalPresentationStyle = .fullScreen
-            self.present(detailVC, animated: true, completion: nil)
-        }
+        
     }
-    
 }

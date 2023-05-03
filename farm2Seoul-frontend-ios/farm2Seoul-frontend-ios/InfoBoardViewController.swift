@@ -110,36 +110,25 @@ class InfoBoardViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @IBAction func corporationButtonTapped(_ sender: UIButton){
-        guard let webKitVC =  storyboard?.instantiateViewController(identifier: "WebKitVC") as? WebKitViewController else
-        { return }
+        print("corporationButton tapped")
         
-        webKitVC.urlString = "https://www.garak.co.kr/main/main.do"
-        print(webKitVC.urlString)
-        webKitVC.modalPresentationStyle = .fullScreen
-        self.present(webKitVC, animated: true)
+        if let url = URL(string: "https://www.garak.co.kr/main/main.do") {
+                UIApplication.shared.open(url, options: [:])
+            }
     }
     
     @objc func noticeButtonTapped(_ sender: UITapGestureRecognizer) {
         print("noticeButtonTapped")
-        
-        guard let webKitVC =  storyboard?.instantiateViewController(identifier: "WebKitVC") as? WebKitViewController else
-        { return }
-        
-        webKitVC.urlString = "https://www.garak.co.kr/bbs/selectPageListBbs.do?bbs_code=B0004"
-        print(webKitVC.urlString)
-        webKitVC.modalPresentationStyle = .fullScreen
-        self.present(webKitVC, animated: true)
+        if let url = URL(string: "https://www.garak.co.kr/bbs/selectPageListBbs.do?bbs_code=B0004") {
+                UIApplication.shared.open(url, options: [:])
+            }
     }
     
     @objc func reportButtonTapped(_ sender: UITapGestureRecognizer) {
         print("tapped")
-        guard let webKitVC =  storyboard?.instantiateViewController(identifier: "WebKitVC") as? WebKitViewController else
-        { return }
-        
-        webKitVC.urlString = "https://www.garak.co.kr/chulha/indexChulha.do"
-        print(webKitVC.urlString)
-        webKitVC.modalPresentationStyle = .fullScreen
-        self.present(webKitVC, animated: true)
+        if let url = URL(string: "https://www.garak.co.kr/chulha/indexChulha.do") {
+            UIApplication.shared.open(url, options: [:])
+        }
     }
     
     @objc func auctionTimeButtonTapped(_ sender: UITapGestureRecognizer) {
@@ -156,50 +145,44 @@ class InfoBoardViewController: UIViewController, UIGestureRecognizerDelegate {
         if let indexString = sender.accessibilityValue,
            let index = Int(indexString) {
             print(index)
-            
-            guard let webKitVC =  storyboard?.instantiateViewController(identifier: "WebKitVC") as? WebKitViewController else
-            { return }
+            var urlString = ""
             switch index {
             case 0 :
-                webKitVC.urlString = "http://www.egreenland.co.kr"
+                urlString = "http://www.egreenland.co.kr"
             case 1 :
-                webKitVC.urlString = "http://newgp.nonghyup.com/index.jsp"
+                urlString = "http://newgp.nonghyup.com/index.jsp"
             case 2 :
-                webKitVC.urlString = "http://www.ejoongang.co.kr"
+                urlString = "http://www.ejoongang.co.kr"
             case 3 :
-                webKitVC.urlString = "http://www.donghwafp.com/web/Main.aspx"
+                urlString = "http://www.donghwafp.com/web/Main.aspx"
             case 4 :
-                webKitVC.urlString = "https://www.hkck.co.kr/index.aspx"
+                urlString = "https://www.hkck.co.kr/index.aspx"
             case 5 :
-                webKitVC.urlString = "https://www.dagreen.co.kr/main/main.asp"
+                urlString = "https://www.dagreen.co.kr/main/main.asp"
             case 6 :
-                webKitVC.urlString = "http://www.kdsusan.co.kr/main2/"
+                urlString = "http://www.kdsusan.co.kr/main2/"
             case 7 :
-                webKitVC.urlString = "https://www.suhyup.co.kr/suhyup/index.do"
+                urlString = "https://www.suhyup.co.kr/suhyup/index.do"
             case 8 :
-                webKitVC.urlString = "http://www.seoulgunhae.com"
+                urlString = "http://www.seoulgunhae.com"
             case 9 :
-                webKitVC.urlString = "http://www.sbbot.com/main/index.do"
+                urlString = "http://www.sbbot.com/main/index.do"
             case 10 :
-                webKitVC.urlString = "http://www.ksfresh.co.kr"
+                urlString = "http://www.ksfresh.co.kr"
             default:
                 break
             }
-            print(webKitVC.urlString)
-            webKitVC.modalPresentationStyle = .fullScreen
-            self.present(webKitVC, animated: true)
+            if let url = URL(string: urlString) {
+                UIApplication.shared.open(url, options: [:])
+            }
         }
     }
     
     @IBAction func iNuriButtonTapped(_ sender: UIButton){
         print("iNuriButtonTapped")
-        guard let webKitVC =  storyboard?.instantiateViewController(identifier: "WebKitVC") as? WebKitViewController else
-        { return }
-        
-        webKitVC.urlString = "https://inuri30.garak.co.kr/main/main.do"
-        print(webKitVC.urlString)
-        webKitVC.modalPresentationStyle = .fullScreen
-        self.present(webKitVC, animated: true)
+        if let url = URL(string: "https://inuri30.garak.co.kr/main/main.do") {
+            UIApplication.shared.open(url, options: [:])
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){

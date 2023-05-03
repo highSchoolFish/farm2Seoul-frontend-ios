@@ -11,8 +11,8 @@ import Charts
 
 class DetailInfoViewController: UIViewController {
     
-    @IBOutlet weak var navTitle: UINavigationItem!
-    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var rankImage: UIImageView!
     @IBOutlet weak var weightLabel: UILabel!
@@ -23,6 +23,7 @@ class DetailInfoViewController: UIViewController {
     @IBOutlet weak var lastFourWeeksButton: UIButton!
     @IBOutlet weak var lastThreeMonthsButton: UIButton!
     @IBOutlet weak var lineChartView: LineChartView!
+    @IBOutlet weak var defaultView: UIView!
     
     var numberOfChart: [Double] = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
     var dayOfChart: [String] = ["월", "화", "수", "목", "금", "토"]
@@ -47,6 +48,7 @@ class DetailInfoViewController: UIViewController {
         makeButton()
         makeGraphView()
         getCurrentDateTime()
+        defaultView.isHidden = true
     }
     
     func getCurrentDateTime(){
@@ -55,13 +57,12 @@ class DetailInfoViewController: UIViewController {
         formatter.timeStyle = .medium
         formatter.dateFormat = "yyyy. MM. dd" //데이터 포멧 설정
         let str = formatter.string(from: Date()) //문자열로 바꾸기
-        navTitle.title = "\(str)"   //라벨에 출력
+        titleLabel.text = "\(str)"   //라벨에 출력
     }
     
     func makeGraphView() {
         initChart(chart: self.lineChartView)
         getThisWeekGraphData()
-        
     }
     
     func initChart(chart: LineChartView) {
@@ -207,6 +208,7 @@ class DetailInfoViewController: UIViewController {
     
     
     @IBAction func thisWeekButtonTapped(_ sender: UIButton) {
+        self.defaultView.isHidden = true
         numberOfChart = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
                 thisWeekButton.backgroundColor = UIColor(named: "MainColor")
                 lastFourWeeksButton.backgroundColor = UIColor(named: "GraphButtonColor")
@@ -223,6 +225,7 @@ class DetailInfoViewController: UIViewController {
     }
     
     @IBAction func lastFourWeeksButtonTapped(_ sender: UIButton) {
+        self.defaultView.isHidden = true
         averagePrice = [0.0, 0.0, 0.0, 0.0]
                 lastFourWeeksButton.backgroundColor = UIColor(named: "MainColor")
                 thisWeekButton.backgroundColor = UIColor(named: "GraphButtonColor")
@@ -237,6 +240,8 @@ class DetailInfoViewController: UIViewController {
     }
     
     @IBAction func lastThreeMonthsButtonTapped(_ sender: UIButton) {
+        self.defaultView.isHidden = true
+
 //        numberOfChart = [0.0, 0.0, 0.0]
                 print("lastThreeMonthsButton \(lastThreeMonthsButton.isSelected)")
                 lastThreeMonthsButton.backgroundColor = UIColor(named: "MainColor")
@@ -247,7 +252,7 @@ class DetailInfoViewController: UIViewController {
                 lastThreeMonthsButton.setTitleColor(UIColor.white, for: .normal)
                 lastFourWeeksButton.setTitleColor(UIColor.black, for: .normal)
                 
-        //        getLastThreeMonthsGraphData()
+                getLastThreeMonthsGraphData()
                 thisWeekButton.isEnabled = true
                 lastFourWeeksButton.isEnabled = true
                 lastThreeMonthsButton.isEnabled = false
@@ -300,10 +305,17 @@ class DetailInfoViewController: UIViewController {
                     print(self.dayOfChart)
                     print(self.numberOfChart)
 
-                    self.lineChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: self.dayOfChart)
+                    if self.numberOfChart == [0.0, 0.0, 0.0, 0.0, 0.0, 0.0] {
+                        self.defaultView.isHidden = false
+                    }
+                    else {
+                        self.defaultView.isHidden = true
+                        self.lineChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: self.dayOfChart)
 
-                    self.setLineData(lineChartView: self.lineChartView, lineChartDataEntries: self.entryData(values: self.numberOfChart))
+                        self.setLineData(lineChartView: self.lineChartView, lineChartDataEntries: self.entryData(values: self.numberOfChart))
 
+                    }
+                    
                     case .failure(let error):
                     print(error.localizedDescription)
                     
@@ -337,29 +349,33 @@ class DetailInfoViewController: UIViewController {
                     print(value)
                 
                     if let data = value as? [[String: Any]] {
+                        print(data)
                         for dict in data {
                             print(dict["weekName"]!)
                             if dict["weekName"] as! String == "1주전" {
-                                self.averagePrice[0] = dict["averagePrice"] as! Double
+                                self.averagePrice[0] = dict["average"] as! Double
                             }
                             if dict["weekName"] as! String == "2주전" {
-                                self.averagePrice[1] = dict["averagePrice"] as! Double
+                                self.averagePrice[1] = dict["average"] as! Double
                             }
                             if dict["weekName"] as! String == "3주전" {
-                                self.averagePrice[2] = dict["averagePrice"] as! Double
+                                self.averagePrice[2] = dict["average"] as! Double
                             }
                             if dict["weekName"] as! String == "4주전" {
-                                self.averagePrice[3] = dict["averagePrice"] as! Double
+                                self.averagePrice[3] = dict["average"] as! Double
                             }
                         }
                     }
                     print(self.weeksData)
                     print(self.averagePrice)
-                    self.lineChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: self.weeksData)
-
-                                    
-                    self.setLineData(lineChartView: self.lineChartView, lineChartDataEntries: self.entryData(values: self.averagePrice))
-
+                    if self.averagePrice == [0.0, 0.0, 0.0, 0.0] {
+                        self.defaultView.isHidden = false
+                    }
+                    else {
+                        self.defaultView.isHidden = true
+                        self.lineChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: self.weeksData)
+                        self.setLineData(lineChartView: self.lineChartView, lineChartDataEntries: self.entryData(values: self.averagePrice))
+                    }
                     case .failure(let error):
                     print(error.localizedDescription)
                     
@@ -370,7 +386,8 @@ class DetailInfoViewController: UIViewController {
         }
 
     
-//    func getLastThreeMonthsGraphData(){
+    func getLastThreeMonthsGraphData(){
+        defaultView.isHidden = false
 //        let path = "http://high-school-fish.com:8081/api/v1/auctions/average-prices/last-3-month?name=\(self.productName)&grade=\(self.rank)&quantity=\(self.quantity)&unit=\(self.unit)"
 //
 //        print("path: \(path)")
@@ -411,7 +428,7 @@ class DetailInfoViewController: UIViewController {
 //                fatalError()
 //            }
 //        }
-//    }
+    }
     
     func separateNumberAndUnit(from string: String) -> (String, String)? {
         let pattern = #"^(\d+(?:\.\d+)?)(\D+)$"#
@@ -432,7 +449,7 @@ class DetailInfoViewController: UIViewController {
         return nil
     }
     
-    @IBAction func backButtonTapped(_ sender: UIBarButtonItem) {
+    @IBAction func backButtonTapped(_ sender: UIButton) {
         backAction()
     }
     

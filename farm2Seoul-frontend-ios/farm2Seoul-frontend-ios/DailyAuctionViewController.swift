@@ -14,8 +14,8 @@ class DailyAuctionViewController: UIViewController, UIScrollViewDelegate{
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet var dailyAuctionCollectionView: UICollectionView!
+    @IBOutlet weak var defaultView: UIView!
     
-    @IBOutlet weak var button: UIButton!
     var searchData:[DailyAuctionResponse] = []
     var dailyAuctionData:[DailyAuctionResponse] = []
     let interval = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
@@ -29,7 +29,7 @@ class DailyAuctionViewController: UIViewController, UIScrollViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         print("viewDidload")
-        
+        defaultView.isHidden = true
         self.dailyAuctionCollectionView.register(UINib(nibName: "DailyAuctionCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "DailyAuctionCell")
         self.dailyAuctionCollectionView.dataSource = self
         self.dailyAuctionCollectionView.delegate = self
@@ -150,27 +150,27 @@ class DailyAuctionViewController: UIViewController, UIScrollViewDelegate{
             }
         }
     }
-    
-    @IBAction func buttonTapped(_ sender: UIButton){
-        guard let graphVC = self.storyboard?.instantiateViewController(withIdentifier: "GraphVC") as? CheckGraphViewController else { return }
-        // 화면 전환 애니메이션 설정
-        graphVC.modalTransitionStyle = .coverVertical
-        // 전환된 화면이 보여지는 방법 설정 (fullScreen)
-        var detailData = "(냉)갈치"
-        graphVC.getDetailData(detailData: detailData)
-        
-        graphVC.modalPresentationStyle = .fullScreen
-        self.present(graphVC, animated: true, completion: nil)
-    }
 }
 
 extension DailyAuctionViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-                if self.isSearchView {
+        if self.isSearchView {
             // 검색 cell
+            if searchData.count == 0 {
+                defaultView.isHidden = false
+            }
+            else {
+                defaultView.isHidden = true
+            }
             return searchData.count
         }
         else {
+            if dailyAuctionData.count == 0 {
+                defaultView.isHidden = false
+            }
+            else {
+                defaultView.isHidden = true
+            }
             return dailyAuctionData.count
         }
     }
@@ -211,7 +211,7 @@ extension DailyAuctionViewController: UICollectionViewDelegate, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("\(indexPath.section), \(indexPath.row)")
-        
+        print(dailyAuctionData)
         guard let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailVC") as? DetailInfoViewController else { return }
         // 화면 전환 애니메이션 설정
         detailVC.modalTransitionStyle = .coverVertical
