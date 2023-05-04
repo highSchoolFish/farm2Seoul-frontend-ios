@@ -26,12 +26,10 @@
 		07BE475429FA581A0074F544 /* LastThreeMonthsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BE475329FA581A0074F544 /* LastThreeMonthsResponse.swift */; };
 		07BE475729FA5D120074F544 /* BookmarkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BE475529FA5D120074F544 /* BookmarkCollectionViewCell.swift */; };
 		07BE475829FA5D120074F544 /* BookmarkCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07BE475629FA5D120074F544 /* BookmarkCollectionViewCell.xib */; };
-		07BE475D29FA804F0074F544 /* Bookmarks+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BE475C29FA804F0074F544 /* Bookmarks+CoreDataClass.swift */; };
-		07BE475E29FA804F0074F544 /* Bookmarks+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BE475B29FA804F0074F544 /* Bookmarks+CoreDataProperties.swift */; };
 		07F4E85029EFBFD700A70F2B /* DailyAuctionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4E84F29EFBFD700A70F2B /* DailyAuctionResponse.swift */; };
 		07F4E85329EFC22400A70F2B /* DailyAuctionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4E85129EFC22400A70F2B /* DailyAuctionCollectionViewCell.swift */; };
 		07F4E85429EFC22400A70F2B /* DailyAuctionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07F4E85229EFC22400A70F2B /* DailyAuctionCollectionViewCell.xib */; };
-		8ED956544212C8D4D97D41D4 /* Pods_farm2Seoul_frontend_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED92C44E9F23F1013A5BC3DB /* Pods_farm2Seoul_frontend_ios.framework */; };
+		695D5FF1D07859B0CC09735C /* Pods_farm2Seoul.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E05042852BC840B83DF5F7F /* Pods_farm2Seoul.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +38,7 @@
 		0770F9BA29F7EC150096BCAE /* AuctionTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionTimeViewController.swift; sourceTree = "<group>"; };
 		0770F9BC29F90EBB0096BCAE /* ThisWeekResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThisWeekResponse.swift; sourceTree = "<group>"; };
 		0772430A29EEA80700BC9FB0 /* DetailInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInfoViewController.swift; sourceTree = "<group>"; };
-		07B4C65029EE805300E09E24 /* farm2Seoul-frontend-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "farm2Seoul-frontend-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		07B4C65029EE805300E09E24 /* farm2Seoul.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = farm2Seoul.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07B4C65329EE805300E09E24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07B4C65529EE805300E09E24 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		07B4C65729EE805300E09E24 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
@@ -56,13 +54,13 @@
 		07BE475329FA581A0074F544 /* LastThreeMonthsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastThreeMonthsResponse.swift; sourceTree = "<group>"; };
 		07BE475529FA5D120074F544 /* BookmarkCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCollectionViewCell.swift; sourceTree = "<group>"; };
 		07BE475629FA5D120074F544 /* BookmarkCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookmarkCollectionViewCell.xib; sourceTree = "<group>"; };
-		07BE475B29FA804F0074F544 /* Bookmarks+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Bookmarks+CoreDataProperties.swift"; path = "/Users/bhyn/Desktop/farm2Seoul-frontend-ios/farm2Seoul-frontend-ios/farm2Seoul-frontend-ios/Bookmarks+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
-		07BE475C29FA804F0074F544 /* Bookmarks+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Bookmarks+CoreDataClass.swift"; path = "/Users/bhyn/Desktop/farm2Seoul-frontend-ios/farm2Seoul-frontend-ios/farm2Seoul-frontend-ios/Bookmarks+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		07F4E84F29EFBFD700A70F2B /* DailyAuctionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyAuctionResponse.swift; sourceTree = "<group>"; };
 		07F4E85129EFC22400A70F2B /* DailyAuctionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyAuctionCollectionViewCell.swift; sourceTree = "<group>"; };
 		07F4E85229EFC22400A70F2B /* DailyAuctionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyAuctionCollectionViewCell.xib; sourceTree = "<group>"; };
+		2E05042852BC840B83DF5F7F /* Pods_farm2Seoul.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_farm2Seoul.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FE19470CE85CF888043D7CF /* Pods-farm2Seoul.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-farm2Seoul.release.xcconfig"; path = "Target Support Files/Pods-farm2Seoul/Pods-farm2Seoul.release.xcconfig"; sourceTree = "<group>"; };
 		648DF574E715156B7018A87A /* Pods-farm2Seoul-frontend-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-farm2Seoul-frontend-ios.debug.xcconfig"; path = "Target Support Files/Pods-farm2Seoul-frontend-ios/Pods-farm2Seoul-frontend-ios.debug.xcconfig"; sourceTree = "<group>"; };
-		ED92C44E9F23F1013A5BC3DB /* Pods_farm2Seoul_frontend_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_farm2Seoul_frontend_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B752F98E19B98081767F860 /* Pods-farm2Seoul.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-farm2Seoul.debug.xcconfig"; path = "Target Support Files/Pods-farm2Seoul/Pods-farm2Seoul.debug.xcconfig"; sourceTree = "<group>"; };
 		FDBE4ED4CE51AB2151E586A5 /* Pods-farm2Seoul-frontend-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-farm2Seoul-frontend-ios.release.xcconfig"; path = "Target Support Files/Pods-farm2Seoul-frontend-ios/Pods-farm2Seoul-frontend-ios.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,7 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8ED956544212C8D4D97D41D4 /* Pods_farm2Seoul_frontend_ios.framework in Frameworks */,
+				695D5FF1D07859B0CC09735C /* Pods_farm2Seoul.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,7 +89,7 @@
 		07B4C65129EE805300E09E24 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				07B4C65029EE805300E09E24 /* farm2Seoul-frontend-ios.app */,
+				07B4C65029EE805300E09E24 /* farm2Seoul.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,8 +97,6 @@
 		07B4C65229EE805300E09E24 /* farm2Seoul-frontend-ios */ = {
 			isa = PBXGroup;
 			children = (
-				07BE475C29FA804F0074F544 /* Bookmarks+CoreDataClass.swift */,
-				07BE475B29FA804F0074F544 /* Bookmarks+CoreDataProperties.swift */,
 				07B4C65329EE805300E09E24 /* AppDelegate.swift */,
 				07B4C65529EE805300E09E24 /* SceneDelegate.swift */,
 				07B4C65729EE805300E09E24 /* MainTabViewController.swift */,
@@ -125,7 +121,8 @@
 				07BE475529FA5D120074F544 /* BookmarkCollectionViewCell.swift */,
 				07BE475629FA5D120074F544 /* BookmarkCollectionViewCell.xib */,
 			);
-			path = "farm2Seoul-frontend-ios";
+			name = "farm2Seoul-frontend-ios";
+			path = farm2Seoul;
 			sourceTree = "<group>";
 		};
 		D463A56955AECAFF0AABB94A /* Pods */ = {
@@ -133,6 +130,8 @@
 			children = (
 				648DF574E715156B7018A87A /* Pods-farm2Seoul-frontend-ios.debug.xcconfig */,
 				FDBE4ED4CE51AB2151E586A5 /* Pods-farm2Seoul-frontend-ios.release.xcconfig */,
+				8B752F98E19B98081767F860 /* Pods-farm2Seoul.debug.xcconfig */,
+				4FE19470CE85CF888043D7CF /* Pods-farm2Seoul.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -140,7 +139,7 @@
 		D9D43FA213B691F1801E7E78 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				ED92C44E9F23F1013A5BC3DB /* Pods_farm2Seoul_frontend_ios.framework */,
+				2E05042852BC840B83DF5F7F /* Pods_farm2Seoul.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -148,9 +147,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		07B4C64F29EE805300E09E24 /* farm2Seoul-frontend-ios */ = {
+		07B4C64F29EE805300E09E24 /* farm2Seoul */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 07B4C66729EE805300E09E24 /* Build configuration list for PBXNativeTarget "farm2Seoul-frontend-ios" */;
+			buildConfigurationList = 07B4C66729EE805300E09E24 /* Build configuration list for PBXNativeTarget "farm2Seoul" */;
 			buildPhases = (
 				869FEB07BD6BD1257948079D /* [CP] Check Pods Manifest.lock */,
 				07B4C64C29EE805300E09E24 /* Sources */,
@@ -162,9 +161,9 @@
 			);
 			dependencies = (
 			);
-			name = "farm2Seoul-frontend-ios";
+			name = farm2Seoul;
 			productName = "farm2Seoul-frontend-ios";
-			productReference = 07B4C65029EE805300E09E24 /* farm2Seoul-frontend-ios.app */;
+			productReference = 07B4C65029EE805300E09E24 /* farm2Seoul.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -182,7 +181,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 07B4C64B29EE805300E09E24 /* Build configuration list for PBXProject "farm2Seoul-frontend-ios" */;
+			buildConfigurationList = 07B4C64B29EE805300E09E24 /* Build configuration list for PBXProject "farm2Seoul" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -195,7 +194,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				07B4C64F29EE805300E09E24 /* farm2Seoul-frontend-ios */,
+				07B4C64F29EE805300E09E24 /* farm2Seoul */,
 			);
 		};
 /* End PBXProject section */
@@ -232,7 +231,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-farm2Seoul-frontend-ios-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-farm2Seoul-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -245,15 +244,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-farm2Seoul-frontend-ios/Pods-farm2Seoul-frontend-ios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-farm2Seoul/Pods-farm2Seoul-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-farm2Seoul-frontend-ios/Pods-farm2Seoul-frontend-ios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-farm2Seoul/Pods-farm2Seoul-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-farm2Seoul-frontend-ios/Pods-farm2Seoul-frontend-ios-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-farm2Seoul/Pods-farm2Seoul-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -272,7 +271,6 @@
 				07F4E85029EFBFD700A70F2B /* DailyAuctionResponse.swift in Sources */,
 				07B4C66B29EE83D200E09E24 /* DailyAuctionViewController.swift in Sources */,
 				07BE475429FA581A0074F544 /* LastThreeMonthsResponse.swift in Sources */,
-				07BE475E29FA804F0074F544 /* Bookmarks+CoreDataProperties.swift in Sources */,
 				07B4C66F29EE845B00E09E24 /* BookmarkViewController.swift in Sources */,
 				0772430B29EEA80700BC9FB0 /* DetailInfoViewController.swift in Sources */,
 				07B4C65E29EE805300E09E24 /* farm2Seoul_frontend_ios.xcdatamodeld in Sources */,
@@ -280,7 +278,6 @@
 				07BE475729FA5D120074F544 /* BookmarkCollectionViewCell.swift in Sources */,
 				0770F9B629F7B1180096BCAE /* MarketCollectionViewCell.swift in Sources */,
 				07B4C65629EE805300E09E24 /* SceneDelegate.swift in Sources */,
-				07BE475D29FA804F0074F544 /* Bookmarks+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,7 +421,7 @@
 		};
 		07B4C66829EE805300E09E24 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 648DF574E715156B7018A87A /* Pods-farm2Seoul-frontend-ios.debug.xcconfig */;
+			baseConfigurationReference = 8B752F98E19B98081767F860 /* Pods-farm2Seoul.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -432,7 +429,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5KW2M7M6X9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "farm2Seoul-frontend-ios/Info.plist";
+				INFOPLIST_FILE = farm2Seoul/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -443,7 +440,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Sim.Farm2Seoul;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -457,7 +454,7 @@
 		};
 		07B4C66929EE805300E09E24 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FDBE4ED4CE51AB2151E586A5 /* Pods-farm2Seoul-frontend-ios.release.xcconfig */;
+			baseConfigurationReference = 4FE19470CE85CF888043D7CF /* Pods-farm2Seoul.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -465,7 +462,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5KW2M7M6X9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "farm2Seoul-frontend-ios/Info.plist";
+				INFOPLIST_FILE = farm2Seoul/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -476,7 +473,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Sim.Farm2Seoul;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -491,7 +488,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		07B4C64B29EE805300E09E24 /* Build configuration list for PBXProject "farm2Seoul-frontend-ios" */ = {
+		07B4C64B29EE805300E09E24 /* Build configuration list for PBXProject "farm2Seoul" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				07B4C66529EE805300E09E24 /* Debug */,
@@ -500,7 +497,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		07B4C66729EE805300E09E24 /* Build configuration list for PBXNativeTarget "farm2Seoul-frontend-ios" */ = {
+		07B4C66729EE805300E09E24 /* Build configuration list for PBXNativeTarget "farm2Seoul" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				07B4C66829EE805300E09E24 /* Debug */,
