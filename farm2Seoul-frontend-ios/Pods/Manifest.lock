@@ -1,0 +1,46 @@
+PODS:
+  - Alamofire (5.6.4)
+  - Charts (4.1.0):
+    - Charts/Core (= 4.1.0)
+  - Charts/Core (4.1.0):
+    - SwiftAlgorithms (~> 1.0)
+  - Moya (15.0.0):
+    - Moya/Core (= 15.0.0)
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
+  - Pageboy (4.0.2)
+  - SwiftAlgorithms (1.0.0)
+  - SwiftyJSON (4.3.0)
+  - Tabman (3.0.1):
+    - Pageboy (~> 4.0.2)
+
+DEPENDENCIES:
+  - Alamofire
+  - Charts
+  - Moya
+  - Pageboy
+  - SwiftyJSON (~> 4.0)
+  - Tabman (~> 3.0)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Charts
+    - Moya
+    - Pageboy
+    - SwiftAlgorithms
+    - SwiftyJSON
+    - Tabman
+
+SPEC CHECKSUMS:
+  Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  Charts: 354f86803d11d9c35de280587fef50d1af063978
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
+  Pageboy: 34ff11e8d1041b81769d5bcde9b19a0cb7218bd9
+  SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+  Tabman: a5880789298f81d3f2cdd6510b54ae637cfd8e09
+
+PODFILE CHECKSUM: 8e30a48c5616feb9236fdebf81ea35a3f6d358f6
+
+COCOAPODS: 1.12.0
